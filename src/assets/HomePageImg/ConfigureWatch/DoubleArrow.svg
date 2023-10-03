@@ -1,0 +1,29 @@
+<svg width="156" height="156" viewBox="0 0 156 156" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_df_93_151)">
+<circle cx="78" cy="78" r="43" fill="white"/>
+<circle cx="78" cy="78" r="42.25" stroke="url(#paint0_linear_93_151)" stroke-width="1.5"/>
+</g>
+<path opacity="0.4" d="M91.999 69.715L69.2074 69.715" stroke="#474A59" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M85.1435 62.8903L91.9999 69.7152L85.1435 76.54" stroke="#474A59" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path opacity="0.4" d="M64.6658 86.3319L87.4574 86.3319" stroke="#474A59" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M71.5214 93.1566L64.6649 86.3317L71.5214 79.5069" stroke="#474A59" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<defs>
+<filter id="filter0_df_93_151" x="0" y="0" width="156" height="156" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feMorphology radius="11" operator="dilate" in="SourceAlpha" result="effect1_dropShadow_93_151"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="12"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.35628 0 0 0 0 0.62606 0 0 0 0 0.662847 0 0 0 0.1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_93_151"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_93_151" result="shape"/>
+<feGaussianBlur stdDeviation="1.5" result="effect2_foregroundBlur_93_151"/>
+</filter>
+<linearGradient id="paint0_linear_93_151" x1="27.7958" y1="78.705" x2="127.979" y2="78.705" gradientUnits="userSpaceOnUse">
+<stop stop-color="#A3DAF1" stop-opacity="0.84"/>
+<stop offset="0.536458" stop-color="#9889E8" stop-opacity="0.85"/>
+<stop offset="1" stop-color="#D27CCF" stop-opacity="0.81"/>
+</linearGradient>
+</defs>
+</svg>

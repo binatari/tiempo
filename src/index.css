@@ -1,0 +1,223 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html {
+  height: full;
+  width: full;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #f3f4f6;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  scrollbar-width: 0.1rem;
+}
+
+
+.button_style {
+  border-radius: 5px;
+  background: var(--primary-gradient, linear-gradient(90deg, rgba(163, 218, 241, 0.71) 0%, rgba(152, 137, 232, 0.46) 53.65%, rgba(210, 124, 207, 0.20) 100%));
+}
+
+.hover_gradient_custom:hover {
+  background-image: linear-gradient(to right, rgba(163, 218, 241, 0.84), rgba(152, 137, 232, 0.85), rgba(210, 124, 207, 0.81));
+}
+
+.gradient_custom {
+  background-image: linear-gradient(to right, rgba(163, 218, 241, 0.84), rgba(152, 137, 232, 0.85), rgba(210, 124, 207, 0.81));
+}
+
+.slick-prev {
+  color: black
+}
+
+.slick-prev:before {
+  color: black
+}
+
+.slick-next {
+  color: black
+}
+
+.slick-next:before {
+  color: black
+}
+
+.slick-disable {
+  color: transparent
+}
+
+.hover-border-gradient {
+  border-width: 2px;
+  border-style: solid;
+  background-clip: padding-box;
+  transition: border-image 0.3s ease-in-out;
+
+}
+
+.hover-border-gradient:hover {
+  border-image: linear-gradient(to right, rgba(163, 218, 241, 0.84), rgba(152, 137, 232, 0.85), rgba(210, 124, 207, 0.81));
+  border-image-slice: 1;
+}
+
+.border-gradient {
+  border-image: linear-gradient(to right, rgba(163, 218, 241, 0.84), rgba(152, 137, 232, 0.85), rgba(210, 124, 207, 0.81));
+  border-image-slice: 1;
+}
+
+
+/* Hide scrollbar for webkit-based browsers (Chrome, Safari, etc.) */
+.hide-scrollbar::-webkit-scrollbar {
+  width: 0.4em;
+  /* Adjust the width as needed */
+}
+
+.hide-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  /* Hide the thumb */
+}
+
+/* Hide scrollbar for Firefox and other browsers */
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+
+.panel {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.toggle-checkbox:checked {
+  @apply: right-0 border-green-400;
+  right: 0;
+  border-color: #68D391;
+}
+
+.toggle-checkbox:checked+.toggle-label {
+  @apply: bg-green-400;
+  background-color: #68D391;
+}
+
+@media (min-width: 1024px) {
+  .scroll-container {
+    width: 100%;
+    height: 100vh;
+    /* Adjust the height as needed */
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    /* Enable vertical snapping */
+  }
+
+  .watchContainerWatch{
+    width: 500px;
+    height: 650px;
+    /* width: 100px;
+    height: 133.33px; */
+    position: relative;
+  }
+  .scroll-item {
+    width: 100%;
+    height: 100vh;
+    transition: transform 0.6s ease-in-out;
+    /* Adjust the height as needed */
+    scroll-behavior: smooth;
+    scroll-snap-align: start;
+    /* Snap to the start of each item */
+  }
+
+  .no-scroll-snap {
+    scroll-snap-type: none;
+    /* Disable scroll snap for the footer */
+  }
+}
+
+
+.css-19kzrtu {
+  padding: 0px !important;
+}
+
+.css-11yukd5-MuiTabs-indicator {
+  background-color: #7A7A7A !important;
+}
+
+
+
+.navigatorContainers .nanigator2 div {
+  border: solid currentColor .5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.navigatorContainers .nanigator2 {
+  /* position: relative; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* * {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  outline: none;
+  box-sizing: border-box;
+  transition: all .5s ease-in-out;
+} */
+
+.watchContainer {
+ 
+  width: 300px;
+  height: 400px;
+  /* width: 100px;
+  height: 133.33px; */
+  position: relative;
+}
+
+.watchContainerWatch{
+  width: 600px;
+  height: 800px;
+  /* width: 100px;
+  height: 133.33px; */
+  position: relative;
+}
+.watchContainerExtra {
+ width: 200px;
+ height: 250px;
+  /* width: 200px;
+  height: 300px; */
+  /* width: 100px;
+  height: 133.33px; */
+  position: relative;
+}
+
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup.show {
+  display: flex;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
