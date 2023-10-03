@@ -1,13 +1,12 @@
-import React, { useContext } from "react";
-import bezelGroup from "../../../../assets/bezel-group.png";
+import { useContext } from "react";
 import { Context } from "../../../../Context/MainContext";
 import Bimage1 from "../../../../assets/HomePageImg/Bezzel/Nbezzle-1.png";
-
 import Bimage2 from "../../../../assets/bezzels/01.png";
 import Bimage3 from "../../../../assets/HomePageImg/Bezzel/Nbezzle-3.png";
 import Bimage4 from "../../../../assets/HomePageImg/Bezzel/Nbezzle-4.png";
 import Bimage5 from "../../../../assets/HomePageImg/Bezzel/Nbezzle-5.png";
 import Bimage6 from "../../../../assets/HomePageImg/Bezzel/Nbezzle-6.png";
+
 const TheNewBezels = () => {
   const { isDark } = useContext(Context);
   const BezzlesliderImages = [
@@ -18,6 +17,7 @@ const TheNewBezels = () => {
     Bimage5,
     Bimage6,
   ];
+
   return (
     <div className=" w-10/12 lg:w-3/4 mid-xl:w-8/12 mx-auto xl:mt-40 ">
       <div className="py-10">
@@ -62,8 +62,6 @@ const TheNewBezels = () => {
               />
             );
           })}
-
-          {/* <img src={bezelGroup} alt="" className='w-full mx-auto' /> */}
         </div>
       </div>
     </div>

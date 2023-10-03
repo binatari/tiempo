@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import starp1 from "../assets/BODY/Body default.png";
 import starp2 from "../assets/BODY/Body.png";
 // dials baguettel
@@ -19,11 +19,6 @@ import dialsBRUSHED5 from "../assets/1K Renders rolex watch/Rolex rubberband wat
 import dialsBRUSHED6 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Dial/Dark-Blue.png";
 import dialsBRUSHED7 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Dial/Red.png";
 import dialsBRUSHED8 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Dial/White.png";
-import dialsBRUSHED9 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Dial/Light-brown.png";
-import dialsBRUSHED10 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Dial/Yellow.png";
-import dialsBRUSHED11 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Dial/Purple.png";
-import dialsBRUSHED12 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Dial/Orange.png";
-import dialsBRUSHED13 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Dial/Brown.png";
 
 // dials ROMAN
 import dialsROMAN1 from "../assets/1K Renders rolex watch/Double Diamond rolex watch/Dial/Black.png";
@@ -77,20 +72,6 @@ const useSlider = () => {
     [starp2, "DATEJUST JUBILEE", 12000, 1],
   ];
 
-  const state1 = {
-    _id: 1,
-    model: "New model",
-    size: "41",
-    watchHeadline: "Datejust 41",
-    watchName: "Jubilee, 41 mm, platinum",
-    dialPriceData: 1000,
-    bezelsPriceData: 2500,
-    strapPriceData: 12000,
-    bezel: "model2",
-    stripe: "body2",
-    dial: "romanAqua",
-  };
-
   const dialsBAGUETTE = [
     [dialsBAGUETTE1, "The Baguette Baton", 2500, 0],
     [dialsBAGUETTE2, "The Baguette Baton", 2500, 1],
@@ -110,11 +91,6 @@ const useSlider = () => {
     [dialsBRUSHED6, "The Brushed", 1000, 13],
     [dialsBRUSHED7, "The Brushed", 1000, 14],
     [dialsBRUSHED8, "The Brushed", 1000, 15],
-    // [dialsBRUSHED9, "The Brushed", 1000, 16],
-    // [dialsBRUSHED10, "The Brushed", 1000, 17],
-    // [dialsBRUSHED11, "The Brushed", 1000, 18],
-    // [dialsBRUSHED12, "The Brushed", 1000, 19],
-    // [dialsBRUSHED13, "The Brushed", 1000, 20],
   ];
   const dialsROMAN = [
     [dialsROMAN1, "Diamond Roman Numeral", 1000, 21],
@@ -153,7 +129,6 @@ const useSlider = () => {
     [extraStarp6, "des", 500, 5],
     [extraStarp7, "des", 500, 6],
     [extraStarp8, "des", 500, 7],
-    // [extraStarp9,"des","200",8],
   ];
 
   const [click, setClick] = useState(null);
@@ -220,12 +195,6 @@ const useSlider = () => {
       ]);
     }
   }, [click]);
-  console.log(click);
-  // setInitialWatch(initialWatchContainer)
-  // const initialWatch = [
-  //    [straps[0],dialsBAGUETTE[0],bazzels[0],36],
-  //    [straps[1],dialsBAGUETTE[1],bazzels[1],41]
-  // ]
 
   const activator = (activeIndex) => {
     const activeElement =
@@ -246,7 +215,6 @@ const useSlider = () => {
     const greaterThan = [];
     const lessThan = [];
     initialWatch.map((i, index) => {
-      // console.log(index,'inddex')
       if (index < activeIndex) {
         lessThan.push(index);
       }
@@ -281,7 +249,6 @@ const useSlider = () => {
     const greaterThan = [];
     const lessThan = [];
     bazzels.map((i, index) => {
-      // console.log(index,'inddex')
       if (index < activeBazzelsIndex) {
         lessThan.push(index);
       }
@@ -311,15 +278,11 @@ const useSlider = () => {
     const copyInitialWatch = [...initialWatch];
     copyInitialWatch[activeWatch][2] = bazzels[activeBazzelsIndex];
     setInitialWatch([...copyInitialWatch]);
-
-    // console.log(copyInitialWatch,"initial wathc afer change")
-    console.log(initialWatch, "initial watch");
   };
   const dialsActivator = (activeDialsIndex) => {
     console.log(activeDialsIndex);
     const activeElement =
       document.getElementsByClassName("imgContainer3")[activeDialsIndex];
-    // window.alert(activeDialsIndex)
     activeElement.style.left = "0%";
     const greaterThan = [];
     const lessThan = [];
@@ -352,156 +315,6 @@ const useSlider = () => {
     copyInitialWatch[activeWatch][1] = dials[activeDialsIndex];
     setInitialWatch([...copyInitialWatch]);
   };
-  //     let dialsActivator
-  //     let extraStrapsActivator
-  //     let bazzelsActivator
-  //     let activator
-
-  // useEffect(()=>{
-  //      dialsActivator =(activeDialsIndex)=>{
-  //         const activeElement = document.getElementsByClassName('imgContainer3')[activeDialsIndex]
-  //         // window.alert(activeDialsIndex)
-  //         activeElement.style.left ="0%"
-  //         const greaterThan =[]
-  //         const lessThan =[]
-  //         console.log(bazzels,'bazzels')
-  //         dials.map((i,index)=>{
-  //             // console.log(index,'inddex')
-  //             if(index<activeDialsIndex){
-  //                 lessThan.push(index )
-
-  //             }
-  //             if(index>activeDialsIndex){
-
-  //                 greaterThan.push(index)
-
-  //             }
-  //         })
-  //         greaterThan.map((i,index)=>{
-  //             document.getElementsByClassName('imgContainer3')[i].style.left =`${(index +1)*200}%`
-  //             document.getElementsByClassName('imgContainer3')[i].style.transition =`all 1s`
-
-  //         })
-  //         lessThan.map(i=>{
-  //             document.getElementsByClassName('imgContainer3')[i].style.left =`-${(lessThan.length - i)*110}%`
-  //             document.getElementsByClassName('imgContainer3')[i].style.transition =`all 1s`
-
-  //         })
-  //         // now made a change in initial watch
-  //         const copyInitialWatch =initialWatch
-  //         copyInitialWatch[activeWatch][1]=dials[activeDialsIndex]
-  //         setInitialWatch(copyInitialWatch)
-  //         console.log(initialWatch,"initial watc")
-
-  //     }
-
-  //    extraStrapsActivator =(activeExtraStrapsIndex)=>{
-  //         const activeElement = document.getElementsByClassName('imgContainer4')[activeExtraStrapsIndex]
-  //         activeElement.style.left ="0%"
-  //         const greaterThan =[]
-  //         const lessThan =[]
-  //         extraStraps.map((i,index)=>{
-  //             // console.log(index,'inddex')
-  //             if(index<activeExtraStrapsIndex){
-  //                 lessThan.push(index )
-
-  //             }
-  //             if(index>activeExtraStrapsIndex){
-
-  //                 greaterThan.push(index)
-
-  //             }
-  //         })
-  //         greaterThan.map((i,index)=>{
-  //             document.getElementsByClassName('imgContainer4')[i].style.left =`${(index +1)*200}%`
-  //             document.getElementsByClassName('imgContainer4')[i].style.transition =`all 1s`
-
-  //         })
-  //         lessThan.map(i=>{
-  //             document.getElementsByClassName('imgContainer4')[i].style.left =`-${(lessThan.length - i)*110}%`
-  //             document.getElementsByClassName('imgContainer4')[i].style.transition =`all 1s`
-
-  //         })
-
-  //     }
-  //      bazzelsActivator =(activeBazzelsIndex)=>{
-  //         const activeElement = document.getElementsByClassName('imgContainer2')[activeBazzelsIndex]
-  //         activeElement.style.left ="0%"
-  //         const greaterThan =[]
-  //         const lessThan =[]
-  //         bazzels.map((i,index)=>{
-  //             // console.log(index,'inddex')
-  //             if(index<activeBazzelsIndex){
-  //                 lessThan.push(index )
-
-  //             }
-  //             if(index>activeBazzelsIndex){
-
-  //                 greaterThan.push(index)
-
-  //             }
-  //         })
-  //         greaterThan.map((i,index)=>{
-  //             document.getElementsByClassName('imgContainer2')[i].style.left =`${(index +1)*200}%`
-  //             document.getElementsByClassName('imgContainer2')[i].style.transition =`all 1s`
-
-  //         })
-  //         lessThan.map(i=>{
-  //             document.getElementsByClassName('imgContainer2')[i].style.left =`-${(lessThan.length - i)*110}%`
-  //             document.getElementsByClassName('imgContainer2')[i].style.transition =`all 1s`
-
-  //         })
-
-  //         // now made a change in initial watch
-  //         // initialWatch[activeWatch][2]=bazzels[activeBazzelsIndex]
-  //         const copyInitialWatch =initialWatch
-  //         copyInitialWatch[activeWatch][2]=bazzels[activeBazzelsIndex]
-  //         setInitialWatch(copyInitialWatch)
-
-  //         // console.log(copyInitialWatch,"initial wathc afer change")
-  //         console.log(initialWatch,"initial watch")
-
-  //     }
-  //     activator  =(activeIndex)=>{
-  //         const activeElement = document.getElementsByClassName('imgContainer')[activeIndex]
-  //         activeElement.style.left ="0%"
-  //         const textElement = document.getElementsByClassName('textContainer')
-  //         for(let i of textElement){
-  //          i.style.display  ='none'
-
-  //         }
-  //         textElement[activeIndex].style.display  ='block'
-  //         const greaterThan =[]
-  //         const lessThan =[]
-  //         initialWatch.map((i,index)=>{
-  //             // console.log(index,'inddex')
-  //             if(index<activeIndex){
-  //                 lessThan.push(index )
-
-  //             }
-  //             if(index>activeIndex){
-
-  //                 greaterThan.push(index)
-
-  //             }
-  //         })
-  //         greaterThan.map((i,index)=>{
-  //             document.getElementsByClassName('imgContainer')[i].style.left =`${(index +1)*200}%`
-  //             document.getElementsByClassName('imgContainer')[i].style.transition =`all 1s`
-
-  //         })
-  //         lessThan.map(i=>{
-  //             document.getElementsByClassName('imgContainer')[i].style.left =`-${(lessThan.length - i)*110}%`
-  //             document.getElementsByClassName('imgContainer')[i].style.transition =`all 1s`
-
-  //         })
-  //         // now update the active element state
-  //         // initialWatch
-  //         setActiveWatch(activeIndex)
-
-  //     }
-
-  // },[])
 
   const extraStrapsActivator = (activeExtraStrapsIndex) => {
     // set extra straps
@@ -512,7 +325,6 @@ const useSlider = () => {
     const greaterThan = [];
     const lessThan = [];
     extraStraps.map((i, index) => {
-      // console.log(index,'inddex')
       if (index < activeExtraStrapsIndex) {
         lessThan.push(index);
       }
