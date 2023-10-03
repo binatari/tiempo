@@ -14,8 +14,6 @@ import toast from "react-hot-toast";
 import ToggleButton from "../../Utils/ToggleButton/ToggleButton";
 import { Context } from "../../Context/MainContext";
 
-
-
 const Configure = () => {
   const { isDark } = useContext(Context);
 
@@ -106,7 +104,7 @@ const Configure = () => {
     extraStraps,
     extraStrapsActivator,
     extraStrap,
-  
+
     selectedSize,
     setSelectedSize,
     selectedExtraStrapsIndex,
@@ -117,7 +115,7 @@ const Configure = () => {
   useEffect(() => {
     // console.log(extraStrap, "initialextraStrap watch")
   }, [extraStrap]);
-  
+
   useEffect(() => {
     const navigator2Child = document.querySelectorAll(".nanigator2 div")[0];
     navigator2Child.style.background = "black";
@@ -134,18 +132,20 @@ const Configure = () => {
     document.getElementsByClassName("bezzleHide")[0].style.display = "none";
 
     bazzels.map((i, index) => {
-      document.getElementsByClassName("imgContainer2")[index].style.left = `${index * 200
-        }%`;
+      document.getElementsByClassName("imgContainer2")[index].style.left = `${
+        index * 200
+      }%`;
     });
     dials.map((i, index) => {
-      document.getElementsByClassName("imgContainer3")[index].style.left = `${index * 200
-        }%`;
+      document.getElementsByClassName("imgContainer3")[index].style.left = `${
+        index * 200
+      }%`;
     });
     extraStraps.map((i, index) => {
-      document.getElementsByClassName("imgContainer4")[index].style.left = `${index * 200
-        }%`;
+      document.getElementsByClassName("imgContainer4")[index].style.left = `${
+        index * 200
+      }%`;
     });
-
   }, []);
   // EPIA = element postion in array
   const handleNavigator = (
@@ -160,7 +160,6 @@ const Configure = () => {
 
     const navigator2Childs = document.querySelectorAll(".nanigator2 div");
     for (let div of navigator2Childs) {
-   
       div.style.background = "white";
       div.style.color = "black";
       div.style.border = "1px solid white";
@@ -231,8 +230,9 @@ const Configure = () => {
     });
     console.log(greaterThan, "greater than");
     greaterThan.map((i, index) => {
-      document.getElementsByClassName(imgContainerclassName)[i].style.left = `${(index + 1) * 200
-        }%`;
+      document.getElementsByClassName(imgContainerclassName)[i].style.left = `${
+        (index + 1) * 200
+      }%`;
       document.getElementsByClassName(imgContainerclassName)[
         i
       ].style.transition = `all 1s`;
@@ -306,15 +306,16 @@ const Configure = () => {
       (selectedSize == 41
         ? initialWatch[activeWatch]?.[2][2]
         : initialWatch[activeWatch]?.[2][2] - 500 > 0
-          ? initialWatch[activeWatch]?.[2][2] - 500
-          : 0);
+        ? initialWatch[activeWatch]?.[2][2] - 500
+        : 0);
     setTotalPrice(totalSum);
   }, [selectedSize]);
 
   return (
     <div
-      className={`${isDark ? "bg-black" : "bg-white"
-        } overflow-hidden md:h-screen xxxl:h-screen xl:h-screen xxl:h-screen h-screen md:overflow-auto lg:h-screen pb-5  `}
+      className={`${
+        isDark ? "bg-black" : "bg-white"
+      } overflow-hidden md:h-screen xxxl:h-screen xl:h-screen xxl:h-screen h-screen md:overflow-auto lg:h-screen pb-5  `}
     >
       <div className="flex justify-between items-center px-5 lg:px-40 py-2">
         <ToggleButton />
@@ -349,20 +350,22 @@ const Configure = () => {
         <div className="text-sm flex gap-x-2">
           <button
             onClick={() => setSelectedSize("41")}
-            className={`px-3 py-1 rounded-md ${selectedSize === "41"
-              ? "bg-white text-black border border-gray-400"
-              : "border border-transparent bg-black text-white"
-              } 
+            className={`px-3 py-1 rounded-md ${
+              selectedSize === "41"
+                ? "bg-white text-black border border-gray-400"
+                : "border border-transparent bg-black text-white"
+            } 
                             `}
           >
             41
           </button>
           <button
             onClick={() => setSelectedSize("36")}
-            className={`px-3 py-1  rounded-md   ${selectedSize === "36"
-              ? "bg-white text-black border border-gray-400"
-              : "border border-transparent bg-black text-white"
-              }`}
+            className={`px-3 py-1  rounded-md   ${
+              selectedSize === "36"
+                ? "bg-white text-black border border-gray-400"
+                : "border border-transparent bg-black text-white"
+            }`}
           >
             36
           </button>
@@ -371,8 +374,9 @@ const Configure = () => {
       <div className="absolute md:left-14 top-24 md:top-24 left-2  z-[9999]">
         <Link
           to="/checkout"
-          className={`py-0.5   cursor-pointer   border-b-2 ${isDark ? "text-white border-white" : "text-black border-black"
-            }`}
+          className={`py-0.5   cursor-pointer   border-b-2 ${
+            isDark ? "text-white border-white" : "text-black border-black"
+          }`}
         >
           Checkout Now
         </Link>
@@ -388,16 +392,18 @@ const Configure = () => {
                 {/* text container */}
                 <div className=" hidden mid-sm:block ">
                   <div
-                    className={`textContainer  ${isDark ? "text-white" : "text-black"
-                      }`}
+                    className={`textContainer  ${
+                      isDark ? "text-white" : "text-black"
+                    }`}
                   >
                     <h3 className="text-sm mb-1">Model</h3>
                     <h3 className="mb-2 text-3xl lg:w-full w-3/4 font-medium uppercase">
                       {item[0][1]}
                     </h3>
                     <div
-                      className={`text-sm capitalize  ${isDark ? "text-gray-200" : "text-[#000]"
-                        }`}
+                      className={`text-sm capitalize  ${
+                        isDark ? "text-gray-200" : "text-[#000]"
+                      }`}
                     >
                       {initialWatch[activeWatch]?.[0][1]},
                       <span className="mx-1">
@@ -418,8 +424,8 @@ const Configure = () => {
                           (selectedSize == 41
                             ? initialWatch[activeWatch]?.[2][2]
                             : initialWatch[activeWatch]?.[2][2] - 500 > 0
-                              ? initialWatch[activeWatch]?.[2][2] - 500
-                              : 0)}
+                            ? initialWatch[activeWatch]?.[2][2] - 500
+                            : 0)}
                       </span>
                     </h1>
                   </div>
@@ -452,8 +458,9 @@ const Configure = () => {
                 className="textContainer2 block mid-sm:hidden mt-5 "
               >
                 <div
-                  className={`textContainer  ${isDark ? "text-white" : "text-black"
-                    }`}
+                  className={`textContainer  ${
+                    isDark ? "text-white" : "text-black"
+                  }`}
                 >
                   <h3 className="text-xs mb-1">Bracelet</h3>
                   <h3 className="text-2xl font-medium uppercase">
@@ -522,8 +529,8 @@ const Configure = () => {
                     (selectedSize == 41
                       ? initialWatch[activeWatch]?.[2][2]
                       : initialWatch[activeWatch]?.[2][2] - 500 > 0
-                        ? initialWatch[activeWatch]?.[2][2] - 500
-                        : 0)}
+                      ? initialWatch[activeWatch]?.[2][2] - 500
+                      : 0)}
                 </span>
               </h1>
             </div>
@@ -565,22 +572,24 @@ const Configure = () => {
             ))}
           </div>
           <div
-            className={`${isDark ? "text-white" : "text-black"
-              } hidden md:block`}
+            className={`${
+              isDark ? "text-white" : "text-black"
+            } hidden md:block`}
           >
             {/* <p className='mb-2 text-xs '>Step 2/3</p> */}
             <h3 className=" text-sm mb-1">Dials</h3>
             {/* <h3 className=''>{initialWatch[activeWatch]?.[0][1]}</h3>
                         <h3 className=''>{initialWatch[activeWatch]?.[0][2]}</h3> */}
-            <h3 className="text-3xl uppercase ">
+            <h3 className="w-3/4 text-3xl uppercase ">
               {initialWatch[activeWatch]?.[1][1]}
             </h3>
 
             {/* extra */}
 
             <h1
-              className={`mt-2 font-medium ${isDark ? "text-white" : "text-black"
-                }`}
+              className={`mt-2 font-medium ${
+                isDark ? "text-white" : "text-black"
+              }`}
             >
               <span>Watch Price :</span>
               <span className="mx-2">
@@ -592,8 +601,8 @@ const Configure = () => {
                   (selectedSize == 41
                     ? initialWatch[activeWatch]?.[2][2]
                     : initialWatch[activeWatch]?.[2][2] - 500 > 0
-                      ? initialWatch[activeWatch]?.[2][2] - 500
-                      : 0)}
+                    ? initialWatch[activeWatch]?.[2][2] - 500
+                    : 0)}
               </span>
             </h1>
           </div>
@@ -633,8 +642,9 @@ const Configure = () => {
             ))}
           </div>
           <div
-            className={`${isDark ? "text-white" : "text-black"
-              } md:flex justify-start flex-col hidden`}
+            className={`${
+              isDark ? "text-white" : "text-black"
+            } md:flex justify-start flex-col hidden`}
           >
             <h3 className="text-xs">Rubber Straps</h3>
             <h3 className="w-3/4 ">Choose additional straps (+£500)</h3>
@@ -753,8 +763,6 @@ const Configure = () => {
               })}
             </Slider>
           </div>
-
-
 
           <div className="strapsNavigators items-center justify-center w-full overflow-hidden hidden">
             {straps?.map((dial, index) => (

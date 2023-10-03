@@ -25,7 +25,7 @@ import logo from "../../assets/TiempoBlackLogo.png";
 
 const Home = () => {
   const { isDark } = useContext(Context);
-  const [isLoadingPopUp, setIsLoadingPopUp] = useState(false)
+  const [isLoadingPopUp, setIsLoadingPopUp] = useState(false);
   const [showPopup, setShowPopup] = useState(true);
 
   const handleUnderstandClick = () => {
@@ -33,18 +33,17 @@ const Home = () => {
 
     localStorage.setItem("understood", "true");
     // Hide the popup
-    setIsLoadingPopUp(false)
+    setIsLoadingPopUp(false);
   };
 
   useEffect(() => {
-    setIsLoadingPopUp(true)
+    setIsLoadingPopUp(true);
     // Check if the user has already clicked 'I understand'
     const understood = localStorage.getItem("understood");
     if (understood === "true") {
       setShowPopup(false);
-      setIsLoadingPopUp(false)
+      setIsLoadingPopUp(false);
     }
-
   }, []);
 
   return (
@@ -53,9 +52,8 @@ const Home = () => {
         className={` hide-scrollbar ${isDark ? "bg-[#000000]" : "bg-white"} `}
       >
         {/* popup   */}
-        {
-          isLoadingPopUp ? <>
-
+        {isLoadingPopUp ? (
+          <>
             {showPopup == true && (
               <div className={`popup ${showPopup ? "show" : ""}`}>
                 <div className="popup-content ">
@@ -72,9 +70,10 @@ const Home = () => {
                       Information
                     </p>
                     <p className="text-[11px] md:text-[14px] text-gray-700 ">
-                      RW Luxury is an independent company which <br /> customizes
-                      authentic watches customer&apos;s <br /> request and is in no way
-                      affiliated with the <br /> manufactures.
+                      RW Luxury is an independent company which <br />{" "}
+                      customizes authentic watches customer&apos;s <br />{" "}
+                      request and is in no way affiliated with the <br />{" "}
+                      manufactures.
                     </p>
                     <button
                       onClick={handleUnderstandClick}
@@ -87,10 +86,9 @@ const Home = () => {
               </div>
             )}
           </>
-            :
-            <>
-            </>
-        }
+        ) : (
+          <></>
+        )}
         {/* popup end */}
 
         <div>
@@ -99,9 +97,7 @@ const Home = () => {
         <div className="mt-[0px]">
           <HeroSection></HeroSection>
         </div>
-        <div data-aos="fade-up">
-          <PopularCollection></PopularCollection>
-        </div>
+
         {/* <div className=''>
           <CustomIngenieur></CustomIngenieur>
         </div> */}
@@ -115,6 +111,10 @@ const Home = () => {
 
         <div data-aos="fade-up">
           <TheStraps></TheStraps>
+        </div>
+
+        <div data-aos="fade-up">
+          <PopularCollection></PopularCollection>
         </div>
 
         <div data-aos="fade-up">
