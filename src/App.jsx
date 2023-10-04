@@ -19,6 +19,7 @@ import Configure from "./components/Configure/Configure";
 import { SliderProvider } from "./Context/Slider_context";
 import Checkout from "./components/Checkout/Checkout";
 
+
 const App = () => {
   const [loading, setLoading] = React.useState(true);
 
