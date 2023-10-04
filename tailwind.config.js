@@ -6,10 +6,10 @@ export default {
   ],
   theme: {
     screens: {
-      'xs':'320px',
-      'mid-xs':'400px',
+      'xs': '320px',
+      'mid-xs': '400px',
       'sm': '480px',
-       'mid-sm':'640px',
+      'mid-sm': '640px',
       'md': '768px',
       'lg': '1024px',
       'mid-xl': '1280px',
@@ -19,6 +19,10 @@ export default {
       'mobile': {
         min: '320px',
         max: '479px'
+      },
+      'lsc-mob': {
+        min: '720px',
+        max: '820px'
       }
     },
     extend: {

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./configure.css";
 import { useSliderContext } from "../../Context/Slider_context";
 import { Link, useNavigate, useParams } from "react-router-dom";
@@ -7,10 +7,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import logoBlack from "../../assets/TiempoBlackLogo.png";
 import logout from "../../assets/logout.svg";
-
+import bag from "../../assets/bag.svg";
 import logo from "../../assets/TiempoWhiteLogo.png";
-import SERVER_URL from "../../Shared/config";
-import toast from "react-hot-toast";
 import ToggleButton from "../../Utils/ToggleButton/ToggleButton";
 import { Context } from "../../Context/MainContext";
 
@@ -339,7 +337,7 @@ const Configure = () => {
       </div>
 
       <div className="flex gap-x-2 items-center absolute top-24 md:top-24 sm:top-16 right-2 md:right-14 z-[9999]">
-        <h1 className={`text-sm ${isDark ? "text-white" : "text-black"}`}>
+        <h1 className={`text-sm mobile:hidden ${isDark ? "text-white" : "text-black"}`}>
           Size:
         </h1>
         <div className="text-sm flex gap-x-2">
@@ -370,7 +368,11 @@ const Configure = () => {
           className={`py-0.5   cursor-pointer   border-b-2 ${isDark ? "text-white border-white" : "text-black border-black"
             }`}
         >
-          Checkout Now
+          <img
+          style={{ 
+            filter: isDark ? 'invert(1)' : ""
+           }}
+          src={bag} className="w-8 h-8 object-contain" alt="" />
         </Link>
       </div>
 
@@ -640,7 +642,7 @@ const Configure = () => {
 
       {/*--------------------------------------------navigator parts start   --------------------------------------------- */}
       <div className="navigatorContainers">
-        <div className="navigator1  xl:my-5  mx-auto overflow-hidden">
+        <div className="navigator1 landscape:lsc-mob:pb-20  xl:my-5  mx-auto overflow-hidden">
           <div
             className="dialsNavigators  items-center justify-center gap-x-10 w-full overflow-hidden hidden"
             style={{ display: "none" }}
@@ -782,7 +784,7 @@ const Configure = () => {
           </div>
         </div>
         <div
-          className="nanigator2  flex items-center pt-2 pb-1 relative left-[3%] mid-xs:left-[0%] md:mt-3 
+          className="nanigator2 z-[99999] landscape:lsc-mob:fixed landscape:lsc-mob:bottom-0 landscape:lsc-mob:left-0 landscape:lsc-mob:right-0 landscape:md:mx-auto mobile:left-0  flex items-center pt-2 pb-1 relative left-[3%] mid-xs:left-[0%] md:mt-3 
          sm:left-[10%] md:-bottom-6 sm:bottom-[12px] sm:scale-75 md:scale-100  md:static"
         >
           <div

@@ -276,7 +276,7 @@ const HeroSection = () => {
         </p> */}
 
         <div
-          className={`absolute md:bottom-14 mid-sm:bottom-14 lg:bottom-5 xl:bottom-24 mid-xl:bottom-14 left-5 right-0 flex  justify-center items-center z-20  ${isDark ? "text-[#A6A6A6]" : "text-black"
+          className={`absolute md:bottom-24 lsc-mob:bottom-64 mid-sm:bottom-24 lg:bottom-20 xl:bottom-24 mid-xl:bottom-24 left-5 right-0 flex  justify-center items-center z-20  ${isDark ? "text-[#A6A6A6]" : "text-black"
             }`}
         >
           0{currentIndex + 1}/0{banners.length}
