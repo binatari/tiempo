@@ -19,6 +19,7 @@ import Configure from "./components/Configure/Configure";
 import { SliderProvider } from "./Context/Slider_context";
 import Checkout from "./components/Checkout/Checkout";
 
+
 const App = () => {
   const [loading, setLoading] = React.useState(true);
 
@@ -115,10 +116,12 @@ const App = () => {
             toast.error(json?.error);
           }
         }
-        setLoading(false);
+
       } catch (error) {
         setAuthenticated(false);
         toast.error(error.response?.data?.error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -156,12 +159,12 @@ const App = () => {
                   <Route
                     path="/configure/:selected"
                     element={(isAdmin || isGuest) && <Configure />}
-                    // element={(isAdmin || isGuest) && <ConfigurationPage />}
+                  // element={(isAdmin || isGuest) && <ConfigurationPage />}
                   />
                   <Route
                     path="/checkout"
                     element={(isAdmin || isGuest) && <Checkout></Checkout>}
-                    // element={(isAdmin || isGuest) && <ConfigurationPage />}
+                  // element={(isAdmin || isGuest) && <ConfigurationPage />}
                   />
                   <Route
                     path="/adminUsers"
