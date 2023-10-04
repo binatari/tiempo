@@ -132,19 +132,16 @@ const Configure = () => {
     document.getElementsByClassName("bezzleHide")[0].style.display = "none";
 
     bazzels.map((i, index) => {
-      document.getElementsByClassName("imgContainer2")[index].style.left = `${
-        index * 200
-      }%`;
+      document.getElementsByClassName("imgContainer2")[index].style.left = `${index * 200
+        }%`;
     });
     dials.map((i, index) => {
-      document.getElementsByClassName("imgContainer3")[index].style.left = `${
-        index * 200
-      }%`;
+      document.getElementsByClassName("imgContainer3")[index].style.left = `${index * 200
+        }%`;
     });
     extraStraps.map((i, index) => {
-      document.getElementsByClassName("imgContainer4")[index].style.left = `${
-        index * 200
-      }%`;
+      document.getElementsByClassName("imgContainer4")[index].style.left = `${index * 200
+        }%`;
     });
   }, []);
   // EPIA = element postion in array
@@ -230,9 +227,8 @@ const Configure = () => {
     });
     console.log(greaterThan, "greater than");
     greaterThan.map((i, index) => {
-      document.getElementsByClassName(imgContainerclassName)[i].style.left = `${
-        (index + 1) * 200
-      }%`;
+      document.getElementsByClassName(imgContainerclassName)[i].style.left = `${(index + 1) * 200
+        }%`;
       document.getElementsByClassName(imgContainerclassName)[
         i
       ].style.transition = `all 1s`;
@@ -306,16 +302,15 @@ const Configure = () => {
       (selectedSize == 41
         ? initialWatch[activeWatch]?.[2][2]
         : initialWatch[activeWatch]?.[2][2] - 500 > 0
-        ? initialWatch[activeWatch]?.[2][2] - 500
-        : 0);
+          ? initialWatch[activeWatch]?.[2][2] - 500
+          : 0);
     setTotalPrice(totalSum);
   }, [selectedSize]);
 
   return (
     <div
-      className={`${
-        isDark ? "bg-black" : "bg-white"
-      } overflow-hidden md:h-screen xxxl:h-screen xl:h-screen xxl:h-screen h-screen md:overflow-auto lg:h-screen pb-5  `}
+      className={`${isDark ? "bg-black" : "bg-white"
+        } overflow-hidden md:h-screen xxxl:h-screen xl:h-screen xxl:h-screen h-screen md:overflow-auto lg:h-screen pb-5  `}
     >
       <div className="flex justify-between items-center px-5 lg:px-40 py-2">
         <ToggleButton />
@@ -343,47 +338,44 @@ const Configure = () => {
         />
       </div>
 
-      <div className="flex gap-x-2 items-center absolute top-24 md:top-24 right-2 md:right-14 z-[9999]">
+      <div className="flex gap-x-2 items-center absolute top-24 md:top-24 sm:top-16 right-2 md:right-14 z-[9999]">
         <h1 className={`text-sm ${isDark ? "text-white" : "text-black"}`}>
           Size:
         </h1>
         <div className="text-sm flex gap-x-2">
           <button
             onClick={() => setSelectedSize("41")}
-            className={`px-3 py-1 rounded-md ${
-              selectedSize === "41"
+            className={`px-3 py-1 rounded-md ${selectedSize === "41"
                 ? "bg-white text-black border border-gray-400"
                 : "border border-transparent bg-black text-white"
-            } 
+              } 
                             `}
           >
             41
           </button>
           <button
             onClick={() => setSelectedSize("36")}
-            className={`px-3 py-1  rounded-md   ${
-              selectedSize === "36"
+            className={`px-3 py-1  rounded-md   ${selectedSize === "36"
                 ? "bg-white text-black border border-gray-400"
                 : "border border-transparent bg-black text-white"
-            }`}
+              }`}
           >
             36
           </button>
         </div>
       </div>
-      <div className="absolute md:left-14 top-24 md:top-24 left-2  z-[9999]">
+      <div className="absolute md:left-14 top-24 md:top-24 left-2 sm:top-16  z-[9999]">
         <Link
           to="/checkout"
-          className={`py-0.5   cursor-pointer   border-b-2 ${
-            isDark ? "text-white border-white" : "text-black border-black"
-          }`}
+          className={`py-0.5   cursor-pointer   border-b-2 ${isDark ? "text-white border-white" : "text-black border-black"
+            }`}
         >
           Checkout Now
         </Link>
       </div>
 
       {/*--------------------------------------------initial size selection part end--------------------------------------------- */}
-      <div className="sliderContainer sliderContainer1">
+      <div className="sliderContainer sm:-mt-10 md:mt-0 sliderContainer1">
         {/*--------------------------------------------slider 1 straps part start --------------------------------------------- */}
         <div className="slider1 slider flex flex-col md:flex-row ">
           <div className="itemContainer mt-10 md:mt-20 lg:mt-5">
@@ -392,18 +384,16 @@ const Configure = () => {
                 {/* text container */}
                 <div className=" hidden mid-sm:block ">
                   <div
-                    className={`textContainer  ${
-                      isDark ? "text-white" : "text-black"
-                    }`}
+                    className={`textContainer  ${isDark ? "text-white" : "text-black"
+                      }`}
                   >
                     <h3 className="text-sm mb-1">Model</h3>
                     <h3 className="mb-2 text-3xl lg:w-full w-3/4 font-medium uppercase">
                       {item[0][1]}
                     </h3>
                     <div
-                      className={`text-sm capitalize  ${
-                        isDark ? "text-gray-200" : "text-[#000]"
-                      }`}
+                      className={`text-sm capitalize  ${isDark ? "text-gray-200" : "text-[#000]"
+                        }`}
                     >
                       {initialWatch[activeWatch]?.[0][1]},
                       <span className="mx-1">
@@ -424,8 +414,8 @@ const Configure = () => {
                           (selectedSize == 41
                             ? initialWatch[activeWatch]?.[2][2]
                             : initialWatch[activeWatch]?.[2][2] - 500 > 0
-                            ? initialWatch[activeWatch]?.[2][2] - 500
-                            : 0)}
+                              ? initialWatch[activeWatch]?.[2][2] - 500
+                              : 0)}
                       </span>
                     </h1>
                   </div>
@@ -435,17 +425,17 @@ const Configure = () => {
                   <img
                     src={item[0][0]}
                     alt=""
-                    className="img1 w-[90%] h-[70%] top-[50%] translate-y-[-50%] left-[4%] absolute"
+                    className="img1 w-[90%] h-[70%] md:top-[50%] mobile:top-[50%] sm:top-[30%] translate-y-[-50%] left-[4%] absolute"
                   />
                   <img
                     src={item[1][0]}
                     alt=""
-                    className="img2 w-[40%] top-[44.5%] translate-y-[-50%] left-[28%] absolute"
+                    className="img2 w-[40%] md:top-[44.5%] mobile:top-[44.5%] sm:top-[24.5%] translate-y-[-50%] left-[28%] absolute"
                   />
                   <img
                     src={item[2][0]}
                     alt=""
-                    className="img3 w-[46.5%] top-[44.5%] translate-y-[-50%] left-[25%] absolute"
+                    className="img3 w-[46.5%] md:top-[44.5%] mobile:top-[44.5%] sm:top-[24.5%] translate-y-[-50%] left-[25%] absolute"
                   />
                 </div>
               </div>
@@ -458,9 +448,8 @@ const Configure = () => {
                 className="textContainer2 block mid-sm:hidden mt-5 "
               >
                 <div
-                  className={`textContainer  ${
-                    isDark ? "text-white" : "text-black"
-                  }`}
+                  className={`textContainer  ${isDark ? "text-white" : "text-black"
+                    }`}
                 >
                   <h3 className="text-xs mb-1">Bracelet</h3>
                   <h3 className="text-2xl font-medium uppercase">
@@ -481,7 +470,7 @@ const Configure = () => {
       </div>
       {/* ----------------------------------------------------------------slider two bezzels --------------------------------------------------------------  */}
 
-      <div className="sliderContainer sliderContainer2">
+      <div className="sliderContainer sm:-mt-10 md:mt-0 sliderContainer2">
         <div className="slider1 slider flex flex-col md:flex-row ">
           <div className="itemContainer itemContainer2 mt-5 md:mt-20  lg:mt-5">
             {
@@ -496,7 +485,7 @@ const Configure = () => {
               <img
                 src={initialWatch[activeWatch]?.[1][0]}
                 alt="belt"
-                className="img2 translate-y-[-50%]  absolute  w-[40%] top-[44.3%]  left-[28%] "
+                className="img2 md:translate-y-[-50%] mobile:translate-y-[-50%] sm:translate-y-[-62%]  absolute  w-[40%] top-[44.3%]  left-[28%] "
               />
             }
             {bazzels?.map((item, index) => (
@@ -505,7 +494,7 @@ const Configure = () => {
                   <img
                     src={item[0]}
                     alt="face"
-                    className="img3 w-[69%] top-[44.5%] translate-y-[-50%] left-[37.5%] absolute"
+                    className="img3 w-[69%] top-[44.5%] md:translate-y-[-50%] mobile:translate-y-[-50%] sm:translate-y-[-120%] left-[37.5%] absolute"
                   />
                 }
               </div>
@@ -529,8 +518,8 @@ const Configure = () => {
                     (selectedSize == 41
                       ? initialWatch[activeWatch]?.[2][2]
                       : initialWatch[activeWatch]?.[2][2] - 500 > 0
-                      ? initialWatch[activeWatch]?.[2][2] - 500
-                      : 0)}
+                        ? initialWatch[activeWatch]?.[2][2] - 500
+                        : 0)}
                 </span>
               </h1>
             </div>
@@ -541,7 +530,7 @@ const Configure = () => {
       </div>
 
       {/* ---------------------------------------------------------------slider dials three ---------------------------------------------------------------- */}
-      <div className="sliderContainer sliderContainer2 ">
+      <div className="sliderContainer sm:-mt-10 md:mt-0 sliderContainer2 ">
         <div className="slider1 slider flex flex-col md:flex-row ">
           <div className="itemContainer itemContainer2 mt-5 md:mt-20  lg:mt-5">
             {
@@ -565,16 +554,15 @@ const Configure = () => {
                   <img
                     src={item[0]}
                     alt="face"
-                    className="img2  translate-y-[-50%]  absolute  w-[40%] top-[44.5%]  left-[28%]"
+                    className="img2 sm:translate-y-[-120%] md:translate-y-[-50%] mobile:translate-y-[-50%]  absolute  w-[40%] top-[44.5%]  left-[28%]"
                   />
                 }
               </div>
             ))}
           </div>
           <div
-            className={`${
-              isDark ? "text-white" : "text-black"
-            } hidden md:block`}
+            className={`${isDark ? "text-white" : "text-black"
+              } hidden md:block`}
           >
             {/* <p className='mb-2 text-xs '>Step 2/3</p> */}
             <h3 className=" text-sm mb-1">Dials</h3>
@@ -587,9 +575,8 @@ const Configure = () => {
             {/* extra */}
 
             <h1
-              className={`mt-2 font-medium ${
-                isDark ? "text-white" : "text-black"
-              }`}
+              className={`mt-2 font-medium ${isDark ? "text-white" : "text-black"
+                }`}
             >
               <span>Watch Price :</span>
               <span className="mx-2">
@@ -601,8 +588,8 @@ const Configure = () => {
                   (selectedSize == 41
                     ? initialWatch[activeWatch]?.[2][2]
                     : initialWatch[activeWatch]?.[2][2] - 500 > 0
-                    ? initialWatch[activeWatch]?.[2][2] - 500
-                    : 0)}
+                      ? initialWatch[activeWatch]?.[2][2] - 500
+                      : 0)}
               </span>
             </h1>
           </div>
@@ -611,14 +598,14 @@ const Configure = () => {
 
       {/* ---------------------------------------------------------------slider extra straps  ---------------------------------------------------------------- */}
 
-      <div className="sliderContainer sliderContainer2">
+      <div className="sliderContainer sm:-mt-10 md:mt-0 sliderContainer2">
         <div className="slider1 slider flex flex-col md:flex-row justify-center items-center ">
           <div className="itemContainer itemContainer2 ">
             {
               <img
                 src={initialWatch[activeWatch]?.[1][0]}
                 alt="face"
-                className="img2 translate-y-[-50%]  absolute  w-[41%] top-[44%]  left-[27.5%] z-[9999]"
+                className="img2  sm:scale-75 md:scale-100 sm:translate-y-[-29%] md:translate-y-[-50%] mobile:translate-y-[-50%]  absolute  w-[41%] top-[44%]  left-[27.5%] z-[9999]"
               />
             }
 
@@ -626,7 +613,7 @@ const Configure = () => {
               <img
                 src={initialWatch[activeWatch]?.[2][0]}
                 alt="belt"
-                className="img3 w-[48%] top-[44%] translate-y-[-50%] left-[24%] absolute z-30"
+                className="img3 w-[48%] top-[44%] sm:scale-75 md:scale-100 md:translate-y-[-50%] mobile:translate-y-[-50%] sm:translate-y-[-32%] left-[24%] absolute z-30"
               />
             }
             {extraStraps.map((item, index) => (
@@ -635,16 +622,15 @@ const Configure = () => {
                   <img
                     src={item[0]}
                     alt="face"
-                    className="img1 w-[100%] left-[2%] h-[70%] top-[50%] translate-y-[-50%] absolute"
+                    className="img1 w-[100%] left-[2%] h-[70%] top-[50%] md:translate-y-[-50%] mobile:translate-y-[-50%] sm:translate-y-[-70%] sm:scale-75 md:scale-100 absolute"
                   />
                 }
               </div>
             ))}
           </div>
           <div
-            className={`${
-              isDark ? "text-white" : "text-black"
-            } md:flex justify-start flex-col hidden`}
+            className={`${isDark ? "text-white" : "text-black"
+              } md:flex justify-start flex-col hidden`}
           >
             <h3 className="text-xs">Rubber Straps</h3>
             <h3 className="w-3/4 ">Choose additional straps (+£500)</h3>
@@ -797,7 +783,7 @@ const Configure = () => {
         </div>
         <div
           className="nanigator2  flex items-center pt-2 pb-1 relative left-[3%] mid-xs:left-[0%] md:mt-3 
-         sm:left-[10%] -bottom-6  md:static"
+         sm:left-[10%] md:-bottom-6 sm:bottom-[12px] sm:scale-75 md:scale-100  md:static"
         >
           <div
             className="mx-1 text-[10px] sm:text-xs md:text-sm  sm:w-24 md:w-32  text-center rounded-full"

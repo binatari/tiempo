@@ -71,9 +71,9 @@ const Home = () => {
                     </p>
                     <p className="text-[11px] md:text-[14px] text-gray-700 ">
                       RW Luxury is an independent company which <br />{" "}
-                      customizes authentic watches customer&apos;s <br />{" "}
+                      customizes authentic watches upon customer&apos;s <br />{" "}
                       request and is in no way affiliated with the <br />{" "}
-                      manufactures.
+                      manufacturers.
                     </p>
                     <button
                       onClick={handleUnderstandClick}

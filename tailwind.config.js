@@ -16,6 +16,10 @@ export default {
       'xl': '1440px',
       'xxl': '1536px',
       'xxxl': '1920px',
+      'mobile': {
+        min: '320px',
+        max: '479px'
+      }
     },
     extend: {
       backgroundImage: {
