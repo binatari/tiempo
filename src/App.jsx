@@ -5,7 +5,7 @@ import WatchModelContext from "./Context/ModelContext.jsx";
 import { Toaster, toast } from "react-hot-toast";
 import Login from "./Pages/Login/Login";
 import Home from "./components/Home/Home";
-import ConfigurationPage from "./components/WatchData/ConfigurationPage.jsx/ConfigurationPage";
+// import ConfigurationPage from "./components/WatchData/ConfigurationPage.jsx/ConfigurationPage";
 import AllUsers from "./Pages/AdminDashboard/AllUsers/AllUsers";
 import PopularCollectionDetails from "./Pages/Home/PopularCollection/PopularCollectionDetails";
 import SERVER_URL from "./Shared/config";
