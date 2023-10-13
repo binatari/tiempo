@@ -84,7 +84,7 @@ const InvoicingTable = ({ isDark, leftArrow  }) => {
                         <li key={index}>
                             <button
 
-                                className={`hover:bg-[#000]  border hover:border-[#fff] bg-gray-400 rounded-full hover:text-white font-semibold py-1 px-3 `}
+                                className={`hover:bg-[#000]  border hover:border-[#fff] bg-gray-400 rounded-full hover:text-white font-semibold py-1 px-3 h-10 w-10`}
                             >
                                 {index + 1}
                             </button>
