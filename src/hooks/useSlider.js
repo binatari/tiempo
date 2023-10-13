@@ -223,17 +223,15 @@ const useSlider = () => {
       }
     });
     greaterThan.map((i, index) => {
-      document.getElementsByClassName("imgContainer")[i].style.left = `${
-        (index + 1) * 200
-      }%`;
+      document.getElementsByClassName("imgContainer")[i].style.left = `${(index + 1) * 200
+        }%`;
       document.getElementsByClassName("imgContainer")[
         i
       ].style.transition = `all 1s`;
     });
     lessThan.map((i) => {
-      document.getElementsByClassName("imgContainer")[i].style.left = `-${
-        (lessThan.length - i) * 110
-      }%`;
+      document.getElementsByClassName("imgContainer")[i].style.left = `-${(lessThan.length - i) * 110
+        }%`;
       document.getElementsByClassName("imgContainer")[
         i
       ].style.transition = `all 1s`;
@@ -257,17 +255,15 @@ const useSlider = () => {
       }
     });
     greaterThan.map((i, index) => {
-      document.getElementsByClassName("imgContainer2")[i].style.left = `${
-        (index + 1) * 200
-      }%`;
+      document.getElementsByClassName("imgContainer2")[i].style.left = `${(index + 1) * 200
+        }%`;
       document.getElementsByClassName("imgContainer2")[
         i
       ].style.transition = `all 1s`;
     });
     lessThan.map((i) => {
-      document.getElementsByClassName("imgContainer2")[i].style.left = `-${
-        (lessThan.length - i) * 110
-      }%`;
+      document.getElementsByClassName("imgContainer2")[i].style.left = `-${(lessThan.length - i) * 110
+        }%`;
       document.getElementsByClassName("imgContainer2")[
         i
       ].style.transition = `all 1s`;
@@ -295,17 +291,15 @@ const useSlider = () => {
       }
     });
     greaterThan.map((i, index) => {
-      document.getElementsByClassName("imgContainer3")[i].style.left = `${
-        (index + 1) * 200
-      }%`;
+      document.getElementsByClassName("imgContainer3")[i].style.left = `${(index + 1) * 200
+        }%`;
       document.getElementsByClassName("imgContainer3")[
         i
       ].style.transition = `all 1s`;
     });
     lessThan.map((i) => {
-      document.getElementsByClassName("imgContainer3")[i].style.left = `-${
-        (lessThan.length - i) * 110
-      }%`;
+      document.getElementsByClassName("imgContainer3")[i].style.left = `-${(lessThan.length - i) * 110
+        }%`;
       document.getElementsByClassName("imgContainer3")[
         i
       ].style.transition = `all 1s`;
@@ -333,17 +327,15 @@ const useSlider = () => {
       }
     });
     greaterThan.map((i, index) => {
-      document.getElementsByClassName("imgContainer4")[i].style.left = `${
-        (index + 1) * 200
-      }%`;
+      document.getElementsByClassName("imgContainer4")[i].style.left = `${(index + 1) * 200
+        }%`;
       document.getElementsByClassName("imgContainer4")[
         i
       ].style.transition = `all 1s`;
     });
     lessThan.map((i) => {
-      document.getElementsByClassName("imgContainer4")[i].style.left = `-${
-        (lessThan.length - i) * 110
-      }%`;
+      document.getElementsByClassName("imgContainer4")[i].style.left = `-${(lessThan.length - i) * 110
+        }%`;
       document.getElementsByClassName("imgContainer4")[
         i
       ].style.transition = `all 1s`;

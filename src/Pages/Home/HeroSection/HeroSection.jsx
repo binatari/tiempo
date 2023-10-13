@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import RightArrow from "../../../assets/HomePageImg/RightArrow.svg";
 import LeftArrow from "../../../assets/HomePageImg/LeftArrow.svg";
@@ -40,7 +40,7 @@ const banners = [
 
 const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const { setClick, click } = useSliderContext();
+  const { setClick } = useSliderContext();
   const nextSlide = () => {
     setCurrentIndex((currentIndex + 1) % banners.length);
   };
@@ -49,11 +49,6 @@ const HeroSection = () => {
     setCurrentIndex((currentIndex - 1 + banners.length) % banners.length);
   };
 
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
-  const toggleDrawer = () => {
-    setIsDrawerOpen(!isDrawerOpen);
-  };
   const navigate = useNavigate();
   const [isAdmin, setIsAdmin] = useState(false);
   const handleLogOut = () => {
@@ -94,47 +89,6 @@ const HeroSection = () => {
   }, []);
   const { isDark } = useContext(Context);
 
-  const state1 = {
-    _id: 1,
-    model: "New model",
-    size: "41",
-    watchHeadline: "Datejust 41",
-    watchName: "Jubilee, 41 mm, platinum",
-    dialPriceData: 1000,
-    bezelsPriceData: 2500,
-    strapPriceData: 12000,
-    bezel: "model2",
-    stripe: "body2",
-    dial: "romanAqua",
-  };
-
-  const state2 = {
-    _id: 2,
-    model: "New model",
-    size: "41",
-    watchHeadline: "Datejust 41",
-    watchName: "Jubilee, 41 mm, platinum",
-    dialPriceData: 1000,
-    bezelsPriceData: 2500,
-    strapPriceData: 12000,
-    bezel: "model2",
-    stripe: "body2",
-    dial: "romanGreen",
-  };
-
-  const state3 = {
-    _id: 3,
-    model: "New model",
-    size: "41",
-    watchHeadline: "Datejust 41",
-    watchName: "Jubilee, 41 mm, platinum",
-    dialPriceData: 1000,
-    bezelsPriceData: 2500,
-    strapPriceData: 12000,
-    bezel: "model2",
-    stripe: "body2",
-    dial: "romanCarmine",
-  };
 
   return (
     <div
