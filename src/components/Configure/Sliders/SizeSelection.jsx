@@ -45,7 +45,7 @@ const SizeSelection = ({ initialWatch, activeWatch, isDark, selectedSize, setInv
                                                         : 0)}
                                         </span>
                                     </h1>
-                                    <button onClick={() => setInvoiceMod(true)} className="bg-white text-black rounded-md uppercase my-2 font-normal px-6 py-2">
+                                    <button onClick={() => setInvoiceMod(true)} className="bg-white text-black rounded-xl uppercase my-2 font-medium mt-10 px-10 py-2">
                                         Checkout
                                     </button>
 
