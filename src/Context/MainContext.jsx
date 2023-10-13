@@ -4,8 +4,9 @@ import { createContext, useEffect, useState } from "react";
 export const Context = createContext();
 
 const MainContext = ({ children }) => {
-  const storedIsDark = localStorage.getItem("isDark") !== "true";
+  //const storedIsDark = localStorage.getItem("isDark") !== "true";
   const [isDark, setIsDark] = useState(true);
+  const [invoiceMod, setInvoiceMod] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("isDark", isDark.toString());
@@ -16,6 +17,8 @@ const MainContext = ({ children }) => {
   const contextInfo = {
     isDark,
     setIsDark,
+    invoiceMod,
+    setInvoiceMod
   };
 
   return <Context.Provider value={contextInfo}>{children}</Context.Provider>;

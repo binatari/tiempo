@@ -28,7 +28,11 @@ export default function DLC({ targetRef, currentWatch, extraStrapSelected }) {
                     <br /><br />
                     <p>Invoice ref number: <span className="ml-5">2030001</span></p>
                     <p>Invoice date: <span className="ml-5">{new Date().toDateString()}</span></p>
-                    <p>Invoice amount: <span className="ml-5">£{totalWatchPrice + strapPrice} (GBP)</span></p>
+
+                    {/* On client demand we commented below code */}
+
+                    {/* <p>Invoice amount: <span className="ml-5">£{totalWatchPrice + strapPrice} (GBP)</span></p> */}
+
                 </div>
             </div>
 
@@ -67,14 +71,17 @@ export default function DLC({ targetRef, currentWatch, extraStrapSelected }) {
                         <td className="w-1/3 text-center  py-2">£{totalWatchPrice}</td>
                         <td className="w-1/3 text-center  py-2">£{totalWatchPrice}</td>
                     </tr>
-                    <tr>
-                        <td className="w-1/3  py-2 ">
-                            Extra strap
-                        </td>
-                        <td className="w-1/3 text-center  py-2">{extraStrapSelected?.length}</td>
-                        <td className="w-1/3 text-center  py-2">£{extraStrapSelected[0][2]}</td>
-                        <td className="w-1/3 text-center  py-2">£{strapPrice}</td>
-                    </tr>
+                    {extraStrapSelected && extraStrapSelected?.length > 0 &&
+                        <tr>
+                            <td className="w-1/3  py-2 ">
+                                Extra strap
+                            </td>
+                            <td className="w-1/3 text-center  py-2">{extraStrapSelected?.length}</td>
+                            <td className="w-1/3 text-center  py-2">£{extraStrapSelected?.[0]?.[2]}</td>
+                            <td className="w-1/3 text-center  py-2">£{strapPrice}</td>
+                        </tr>
+                    }
+
                     <br />
                 </tbody>
             </table>

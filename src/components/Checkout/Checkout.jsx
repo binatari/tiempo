@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useSliderContext } from '../../Context/Slider_context';
 import { Context } from '../../Context/MainContext';
 import { Link, useNavigate } from 'react-router-dom';
@@ -7,13 +7,12 @@ import logoBlack from '../../assets/TiempoBlackLogo.png'
 import logout from '../../assets/logout.svg'
 import logo from '../../assets/TiempoWhiteLogo.png';
 const Checkout = () => {
-    const { extraStrap, initialWatch, activeWatch, extraStraps, selectedSize, setSelectedSize, selectedExtraStrapsIndex } = useSliderContext()
+    const { initialWatch, activeWatch, extraStraps, selectedSize, selectedExtraStrapsIndex } = useSliderContext()
     const [strapPrice, setStrapePrice] = useState(initialWatch[activeWatch]?.[0][2])
     console.log(activeWatch);
     const [selectedExtraStraps, setSelectedExtraStraps] = useState([])
 
     const [extraStrapPrice, setExtraStrapPrice] = useState()
-
     const navigate = useNavigate();
     const [totalPrice, setTotalPrice] = useState()
     useEffect(() => {
@@ -49,7 +48,7 @@ const Checkout = () => {
     useEffect(() => {
         let slectedExtraStrapsContainer = []
         let selectedExtraStrapsPrice = 0
-        selectedExtraStrapsIndex.map((strapIndex, index) => {
+        selectedExtraStrapsIndex.map((strapIndex) => {
             slectedExtraStrapsContainer.push(extraStraps[strapIndex])
 
             console.log(extraStraps[strapIndex][2], "extra staps price")
@@ -68,7 +67,7 @@ const Checkout = () => {
     }, [strapPrice])
 
 
-    const { isDark } = useContext(Context)
+    const { isDark, setInvoiceMod } = useContext(Context)
     const handleGoBack = () => {
         // Go back to the previous location
         navigate(`../configure/${activeWatch}`);
@@ -151,7 +150,14 @@ const Checkout = () => {
 
                     <h1 className={`text-lg mt-5 pt-1.5 border-t  ${isDark ? 'border-white' : 'border-black'}`}>Total Price: <span className='font-medium'> £{totalPrice}
                     </span></h1>
-
+                    <button
+                        onClick={() => {
+                            setInvoiceMod(true)
+                            handleGoBack();
+                        }}
+                        className="bg-white text-black rounded-md uppercase my-2 font-normal px-6 py-2">
+                        Order Now
+                    </button>
                 </div>
 
 
