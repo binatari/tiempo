@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react'
-import DialBg from '../../assets/HomePageImg/Dials/DialBg.png';
+import { useContext, useState } from 'react'
 import image1 from '../../assets/HomePageImg/Dials/Dial-1.png';
 import image2 from '../../assets/HomePageImg/Dials/Dial-2.png';
 import image3 from '../../assets/HomePageImg/Dials/Dial-3.png';
@@ -34,10 +33,6 @@ const DialSlide = () => {
 
   const activeSliderImages = showFirstSlider ? sliderImages1 : sliderImages2;
   const { isDark } = useContext(Context)
-
-
-
-  
 
   return (
     <>

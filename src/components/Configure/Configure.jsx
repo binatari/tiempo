@@ -1,10 +1,9 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import "./configure.css";
 import { useSliderContext } from "../../Context/Slider_context";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
 import logoBlack from "../../assets/TiempoBlackLogo.png";
 import logout from "../../assets/logout.svg";
 import bag from "../../assets/bag.svg";
@@ -12,82 +11,16 @@ import logo from "../../assets/TiempoWhiteLogo.png";
 import ToggleButton from "../../Utils/ToggleButton/ToggleButton";
 import { Context } from "../../Context/MainContext";
 import InvoiceModal from "./InvoiceModal";
+import SizeSelection from "./Sliders/SizeSelection";
+import Bezzels from "./Sliders/Bezzels";
+import Dials from "./Sliders/Dials";
+import ExtraStraps from "./Sliders/ExtraStraps";
+import Navigator from "./Navigators/Navigator";
+import { settings } from "./data";
 
 const Configure = () => {
-  const { isDark } = useContext(Context);
+  const { isDark, invoiceMod, setInvoiceMod } = useContext(Context);
 
-  // __________________--------_______________________________________
-
-  var settings = {
-    // dots: true,
-    infinite: true,
-    arrows: true,
-    slidesToShow: 16,
-    slidesToScroll: 16,
-    speed: 700,
-    // centerPadding: '50px',
-    responsive: [
-      {
-        breakpoint: 1440,
-        settings: {
-          arrows: true,
-          slidesToShow: 16,
-          slidesToScroll: 16,
-          infinite: false,
-          speed: 700,
-        },
-      },
-      {
-        breakpoint: 1280,
-        settings: {
-          arrows: true,
-          slidesToShow: 15,
-          slidesToScroll: 15,
-          infinite: false,
-          speed: 700,
-        },
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          arrows: true,
-          slidesToShow: 10,
-          slidesToScroll: 10,
-          infinite: false,
-          speed: 700,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          arrows: true,
-          slidesToShow: 14,
-          slidesToScroll: 14,
-          infinite: false,
-          speed: 700,
-        },
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          arrows: true,
-          slidesToShow: 8,
-          slidesToScroll: 8,
-          speed: 700,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          arrows: true,
-          slidesToShow: 6,
-          slidesToScroll: 6,
-          speed: 700,
-        },
-      },
-    ],
-  };
-  // --------------------------------------------------------------
   const {
     straps,
     dialsBAGUETTE,
@@ -102,8 +35,7 @@ const Configure = () => {
     dials,
     extraStraps,
     extraStrapsActivator,
-    extraStrap,
-
+    //extraStrap,
     selectedSize,
     setSelectedSize,
     selectedExtraStrapsIndex,
@@ -111,9 +43,6 @@ const Configure = () => {
   } = useSliderContext();
 
   const { selected } = useParams();
-  useEffect(() => {
-    // console.log(extraStrap, "initialextraStrap watch")
-  }, [extraStrap]);
 
   useEffect(() => {
     const navigator2Child = document.querySelectorAll(".nanigator2 div")[0];
@@ -142,7 +71,9 @@ const Configure = () => {
       document.getElementsByClassName("imgContainer4")[index].style.left = `${index * 200
         }%`;
     });
+    //eslint-disable-next-line
   }, []);
+
   // EPIA = element postion in array
   const handleNavigator = (
     className,
@@ -264,6 +195,7 @@ const Configure = () => {
       // })
     };
     initSyle();
+    //eslint-disable-next-line
   }, []);
 
   // const extraStrapsHandler = (index) => {
@@ -289,24 +221,25 @@ const Configure = () => {
     selectedExtraStrapsIndex.map((index) => {
       inputs[index].checked = true;
     });
+    //eslint-disable-next-line
   }, []);
 
-  const [totalPrice, setTotalPrice] = useState(0);
-  useEffect(() => {
-    const totalSum =
-      (selectedSize == 41
-        ? initialWatch[activeWatch]?.[0][2]
-        : initialWatch[activeWatch]?.[0][2] - 750) +
-      initialWatch[activeWatch]?.[1][2] +
-      (selectedSize == 41
-        ? initialWatch[activeWatch]?.[2][2]
-        : initialWatch[activeWatch]?.[2][2] - 500 > 0
-          ? initialWatch[activeWatch]?.[2][2] - 500
-          : 0);
-    setTotalPrice(totalSum);
-  }, [selectedSize]);
+  //const [totalPrice, setTotalPrice] = useState(0);
+  // useEffect(() => {
+  //   const totalSum =
+  //     (selectedSize == 41
+  //       ? initialWatch[activeWatch]?.[0][2]
+  //       : initialWatch[activeWatch]?.[0][2] - 750) +
+  //     initialWatch[activeWatch]?.[1][2] +
+  //     (selectedSize == 41
+  //       ? initialWatch[activeWatch]?.[2][2]
+  //       : initialWatch[activeWatch]?.[2][2] - 500 > 0
+  //         ? initialWatch[activeWatch]?.[2][2] - 500
+  //         : 0);
+  //   //setTotalPrice(totalSum);
+  // }, [selectedSize]);
 
-  const [invoiceMod, setInvoiceMod] = useState(false);
+  //const [invoiceMod, setInvoiceMod] = useState(false);
   console.log(activeWatch)
   console.log(initialWatch[activeWatch]);
   const extraStrapSelected = extraStraps?.filter((v, i) => selectedExtraStrapsIndex?.includes(i));
@@ -388,477 +321,43 @@ const Configure = () => {
         </div>
 
         {/*--------------------------------------------initial size selection part end--------------------------------------------- */}
-        <div className="sliderContainer sm:-mt-10 md:mt-0 sliderContainer1">
-          {/*--------------------------------------------slider 1 straps part start --------------------------------------------- */}
-          <div className="slider1 slider flex flex-col md:flex-row ">
-            <div className="itemContainer mt-10 md:mt-20 lg:mt-5">
-              {initialWatch.map((item, index) => (
-                <div key={index}>
-                  {/* text container */}
-                  <div className=" hidden mid-sm:block ">
-                    <div
-                      className={`textContainer  ${isDark ? "text-white" : "text-black"
-                        }`}
-                    >
-                      <h3 className="text-sm mb-1">Model</h3>
-                      <h3 className="mb-2 text-3xl lg:w-full w-3/4 font-medium uppercase">
-                        {item[0][1]}
-                      </h3>
-                      <div
-                        className={`text-sm capitalize  ${isDark ? "text-gray-200" : "text-[#000]"
-                          }`}
-                      >
-                        {initialWatch[activeWatch]?.[0][1]},
-                        <span className="mx-1">
-                          {selectedSize} <span className="normal-case">mm</span>
-                        </span>
-                        <p className="">{initialWatch[activeWatch]?.[1][1]}</p>
-                        <p>{initialWatch[activeWatch]?.[2][1]}</p>
-                      </div>
-                      {/* <h1>Total Price : £{totalPrice}</h1> */}
-                      <h1 className="mt-2 font-medium">
-                        <span>Watch Price :</span>
-                        <span className="mx-2">
-                          £
-                          {(selectedSize == 41
-                            ? initialWatch[activeWatch]?.[0][2]
-                            : initialWatch[activeWatch]?.[0][2] - 750) +
-                            initialWatch[activeWatch]?.[1][2] +
-                            (selectedSize == 41
-                              ? initialWatch[activeWatch]?.[2][2]
-                              : initialWatch[activeWatch]?.[2][2] - 500 > 0
-                                ? initialWatch[activeWatch]?.[2][2] - 500
-                                : 0)}
-                        </span>
-                      </h1>
-                      <button onClick={() => setInvoiceMod(true)} className="bg-white text-black rounded-md uppercase my-2 font-normal px-6 py-2">
-                        Checkout
-                      </button>
+        <SizeSelection initialWatch={initialWatch} activeWatch={activeWatch} isDark={isDark}
+          selectedSize={selectedSize} setInvoiceMod={setInvoiceMod} />
 
-                    </div>
-                  </div>
-
-                  <div className="imgContainer">
-                    <img
-                      src={item[0][0]}
-                      alt=""
-                      className="img1 w-[90%] h-[70%] md:top-[50%] mobile:top-[50%] sm:top-[30%] translate-y-[-50%] left-[4%] absolute"
-                    />
-                    <img
-                      src={item[1][0]}
-                      alt=""
-                      className="img2 w-[40%] md:top-[44.5%] mobile:top-[44.5%] sm:top-[24.5%] translate-y-[-50%] left-[28%] absolute"
-                    />
-                    <img
-                      src={item[2][0]}
-                      alt=""
-                      className="img3 w-[46.5%] md:top-[44.5%] mobile:top-[44.5%] sm:top-[24.5%] translate-y-[-50%] left-[25%] absolute"
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className=" overflow-hidden mid-sm:hidden text-white">
-              {initialWatch.map((item, index) => (
-                <div
-                  key={index}
-                  className="textContainer2 block mid-sm:hidden mt-5 "
-                >
-                  <div
-                    className={`textContainer  ${isDark ? "text-white" : "text-black"
-                      }`}
-                  >
-                    <h3 className="text-xs mb-1">Bracelet</h3>
-                    <h3 className="text-2xl font-medium uppercase">
-                      {item[0][1]}
-                    </h3>
-                    <h1>
-                      {/* <h3 className=''>{initialWatch[activeWatch]?.[0][1]}</h3>
-                        <h3 className=''>{initialWatch[activeWatch]?.[0][2]}</h3>
-                        <h3 className=''>{initialWatch[activeWatch]?.[1][1]}</h3>
-                        <h3 className=''>{initialWatch[activeWatch]?.[1][2]}</h3> */}
-                    </h1>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          {/*--------------------------------------------slider 1 straps part end   --------------------------------------------- */}
-        </div>
         {/* ----------------------------------------------------------------slider two bezzels --------------------------------------------------------------  */}
-
-        <div className="sliderContainer sm:-mt-10 md:mt-0 sliderContainer2">
-          <div className="slider1 slider flex flex-col md:flex-row ">
-            <div className="itemContainer itemContainer2 mt-5 md:mt-20  lg:mt-5">
-              {
-                <img
-                  src={initialWatch[activeWatch]?.[0][0]}
-                  alt="face"
-                  className="img1 w-[90%] h-[70%] left-[4%] top-[50%] translate-y-[-50%] absolute"
-                />
-              }
-
-              {
-                <img
-                  src={initialWatch[activeWatch]?.[1][0]}
-                  alt="belt"
-                  className="img2 md:translate-y-[-50%] mobile:translate-y-[-50%] sm:translate-y-[-62%]  absolute  w-[40%] top-[44.3%]  left-[28%] "
-                />
-              }
-              {bazzels?.map((item, index) => (
-                <div key={index} className="imgContainer2">
-                  {
-                    <img
-                      src={item[0]}
-                      alt="face"
-                      className="img3 w-[69%] top-[44.5%] md:translate-y-[-50%] mobile:translate-y-[-50%] sm:translate-y-[-120%] left-[37.5%] absolute"
-                    />
-                  }
-                </div>
-              ))}
-            </div>
-            <div className={`${isDark ? "text-white" : "text-black"}`}>
-              <div className="hidden md:block">
-                {/* <p className='text-xs mb-2'>Step 3/3</p> */}
-                <h3 className="text-sm mb-1">Bezels</h3>
-                <h3 className="mb-2 text-3xl w-3/4 ">
-                  {initialWatch[activeWatch]?.[2][1]}
-                </h3>
-                <h1 className="mt-2 font-medium">
-                  <span>Watch Price :</span>
-                  <span className="mx-2">
-                    £
-                    {(selectedSize == 41
-                      ? initialWatch[activeWatch]?.[0][2]
-                      : initialWatch[activeWatch]?.[0][2] - 750) +
-                      initialWatch[activeWatch]?.[1][2] +
-                      (selectedSize == 41
-                        ? initialWatch[activeWatch]?.[2][2]
-                        : initialWatch[activeWatch]?.[2][2] - 500 > 0
-                          ? initialWatch[activeWatch]?.[2][2] - 500
-                          : 0)}
-                  </span>
-                </h1>
-              </div>
-
-              <h3></h3>
-            </div>
-          </div>
-        </div>
+        <Bezzels initialWatch={initialWatch} activeWatch={activeWatch} isDark={isDark}
+          selectedSize={selectedSize} bazzels={bazzels} />
 
         {/* ---------------------------------------------------------------slider dials three ---------------------------------------------------------------- */}
-        <div className="sliderContainer sm:-mt-10 md:mt-0 sliderContainer2 ">
-          <div className="slider1 slider flex flex-col md:flex-row ">
-            <div className="itemContainer itemContainer2 mt-5 md:mt-20  lg:mt-5">
-              {
-                <img
-                  src={initialWatch[activeWatch]?.[0][0]}
-                  alt="face"
-                  className="img1 w-[90%] h-[70%] left-[4%] top-[50%] translate-y-[-50%] absolute"
-                />
-              }
-
-              {
-                <img
-                  src={initialWatch[activeWatch]?.[2][0]}
-                  alt="belt"
-                  className="img3 w-[46%] top-[44.5%] translate-y-[-50%] left-[25%] absolute z-30"
-                />
-              }
-              {dials.map((item, index) => (
-                <div key={index} className="imgContainer imgContainer3">
-                  {
-                    <img
-                      src={item[0]}
-                      alt="face"
-                      className="img2 sm:translate-y-[-120%] md:translate-y-[-50%] mobile:translate-y-[-50%]  absolute  w-[40%] top-[44.5%]  left-[28%]"
-                    />
-                  }
-                </div>
-              ))}
-            </div>
-            <div
-              className={`${isDark ? "text-white" : "text-black"
-                } hidden md:block`}
-            >
-              {/* <p className='mb-2 text-xs '>Step 2/3</p> */}
-              <h3 className=" text-sm mb-1">Dials</h3>
-              {/* <h3 className=''>{initialWatch[activeWatch]?.[0][1]}</h3>
-                        <h3 className=''>{initialWatch[activeWatch]?.[0][2]}</h3> */}
-              <h3 className="w-3/4 text-3xl uppercase ">
-                {initialWatch[activeWatch]?.[1][1]}
-              </h3>
-
-              {/* extra */}
-
-              <h1
-                className={`mt-2 font-medium ${isDark ? "text-white" : "text-black"
-                  }`}
-              >
-                <span>Watch Price :</span>
-                <span className="mx-2">
-                  £
-                  {(selectedSize == 41
-                    ? initialWatch[activeWatch]?.[0][2]
-                    : initialWatch[activeWatch]?.[0][2] - 750) +
-                    initialWatch[activeWatch]?.[1][2] +
-                    (selectedSize == 41
-                      ? initialWatch[activeWatch]?.[2][2]
-                      : initialWatch[activeWatch]?.[2][2] - 500 > 0
-                        ? initialWatch[activeWatch]?.[2][2] - 500
-                        : 0)}
-                </span>
-              </h1>
-            </div>
-          </div>
-        </div>
+        <Dials initialWatch={initialWatch} activeWatch={activeWatch} isDark={isDark}
+          selectedSize={selectedSize} dials={dials} />
 
         {/* ---------------------------------------------------------------slider extra straps  ---------------------------------------------------------------- */}
 
-        <div className="sliderContainer sm:-mt-10 md:mt-0 sliderContainer2">
-          <div className="slider1 slider flex flex-col md:flex-row justify-center items-center ">
-            <div className="itemContainer itemContainer2 ">
-              {
-                <img
-                  src={initialWatch[activeWatch]?.[1][0]}
-                  alt="face"
-                  className="img2  sm:scale-75 md:scale-100 sm:translate-y-[-29%] md:translate-y-[-50%] mobile:translate-y-[-50%]  absolute  w-[41%] top-[44%]  left-[27.5%] z-[9999]"
-                />
-              }
-
-              {
-                <img
-                  src={initialWatch[activeWatch]?.[2][0]}
-                  alt="belt"
-                  className="img3 w-[48%] top-[44%] sm:scale-75 md:scale-100 md:translate-y-[-50%] mobile:translate-y-[-50%] sm:translate-y-[-32%] left-[24%] absolute z-30"
-                />
-              }
-              {extraStraps.map((item, index) => (
-                <div key={index} className="imgContainer imgContainer4">
-                  {
-                    <img
-                      src={item[0]}
-                      alt="face"
-                      className="img1 w-[100%] left-[2%] h-[70%] top-[50%] md:translate-y-[-50%] mobile:translate-y-[-50%] sm:translate-y-[-70%] sm:scale-75 md:scale-100 absolute"
-                    />
-                  }
-                </div>
-              ))}
-            </div>
-            <div
-              className={`${isDark ? "text-white" : "text-black"
-                } md:flex justify-start flex-col hidden`}
-            >
-              <h3 className="text-xs">Rubber Straps</h3>
-              <h3 className="w-3/4 ">Choose additional straps (+£500)</h3>
-            </div>
-          </div>
-        </div>
+        <ExtraStraps
+          initialWatch={initialWatch}
+          activeWatch={activeWatch}
+          isDark={isDark}
+          extraStraps={extraStraps}
+        />
 
         {/*--------------------------------------------navigator parts start   --------------------------------------------- */}
-        <div className="navigatorContainers">
-          <div className="navigator1 landscape:lsc-mob:pb-20  xl:my-5  mx-auto overflow-hidden">
-            <div
-              className="dialsNavigators  items-center justify-center gap-x-10 w-full overflow-hidden hidden"
-              style={{ display: "none" }}
-            >
-              {/* ------------------------------------------- dial naivagor start ---------------------------------------- */}
-              {/* <span>Baguette</span> */}
-              <div className="flex gap-x-2">
-                {
-                  dialsBAGUETTE.map((dial, index) => (
-                    <img
-                      key={index}
-                      className="lg:w-8 lg:h-8  mid-xl:w-10   mid-xl:h-10 w-12 h-12  object-cover object-center"
-                      src={dial[0]}
-                      onClick={() => dialsActivator(index)}
-                    />
-                  ))
-                  // <div key={index} className='imgNavigator'></div>
-                }
-              </div>
-
-              {/* <span>BRUSHED</span> */}
-              <div className="flex gap-x-2">
-                {dialsBRUSHED.map((dial, index) => (
-                  <img
-                    key={index}
-                    className="  mid-xl:w-10 lg:w-8 lg:h-8  mid-xl:h-10 w-12 h-12  object-cover object-center"
-                    src={dial[0]}
-                    onClick={() => dialsActivator(dialsBAGUETTE.length + index)}
-                  />
-                ))}
-              </div>
-              {/* <span>ROMAN</span> */}
-              <div className="flex gap-x-2">
-                {dialsROMAN.map((dial, index) => (
-                  <img
-                    key={index}
-                    className="lg:w-8 lg:h-8  mid-xl:w-10  mid-xl:h-10 w-12 h-12  object-cover object-center"
-                    src={dial[0]}
-                    onClick={() =>
-                      dialsActivator(
-                        dialsBAGUETTE.length + dialsBRUSHED.length + index
-                      )
-                    }
-                  />
-                ))}
-              </div>
-              {/* ------------------------------------------- dial navigator end------------------------------------------ */}
-            </div>
-
-            <div>
-              <Slider
-                {...settings}
-                className="dialsNavigators w-full hidden ml-1"
-                style={{ display: "none" }}
-              >
-                {dials?.map((dial, index) => {
-                  // const { img, filename } = image;
-                  return (
-                    <div key={index} className="outline-none border-none ">
-                      <img
-                        key={index}
-                        className="w-12 h-12 lg:w-8 lg:h-8 xl:w-10 xl:h-10  cursor-pointer"
-                        src={dial[0]}
-                        onClick={() => dialsActivator(index)}
-                      />
-                    </div>
-                  );
-                })}
-              </Slider>
-            </div>
-
-            <div
-              className="bezzelsNavigators  w-full overflow-hidden hidden justify-center gap-x-2.5"
-              style={{ display: "none" }}
-            >
-              {bazzels?.map((dial, index) => (
-                <img
-                  key={index}
-                  className="mid-xl:w-10 lg:w-8 lg:h-8  mid-xl:h-10 w-12 h-12  object-cover object-center"
-                  src={dial[0]}
-                  onClick={() => bazzelsActivator(index)}
-                />
-              ))}
-            </div>
-
-            <div className="">
-              <Slider
-                {...settings}
-                className="bezzelsNavigators bezzleHide w-full hidden ml-1"
-                style={{ display: "none" }}
-              >
-                {bazzels?.map((dial, index) => {
-                  // const { img, filename } = image;
-                  return (
-                    <div key={index} className="outline-none border-none ">
-                      <img
-                        key={index}
-                        className="w-12 h-12 lg:w-8 lg:h-8 xl:w-10 xl:h-10  cursor-pointer"
-                        src={dial[0]}
-                        onClick={() => bazzelsActivator(index)}
-                      />
-                      {/* <img src={img} alt="dial image" className=" w-full xl:h-full  cursor-pointer" 
-                                        onClick={() => { handleDialClick(filename) }} /> */}
-                    </div>
-                  );
-                })}
-              </Slider>
-            </div>
-
-            <div className="strapsNavigators items-center justify-center w-full overflow-hidden hidden">
-              {straps?.map((dial, index) => (
-                <img
-                  key={index}
-                  className="mid-xl:w-10 lg:w-8 lg:h-8  mid-xl:h-10 w-12 h-14  object-cover object-center"
-                  src={dial[0]}
-                  onClick={() => activator(index)}
-                />
-              ))}
-            </div>
-
-            <div className="extraStrapsNavigator  justify-center w-full overflow-hidden hidden relative -mt-2">
-              {extraStraps.map((dial, index) => (
-                <div key={index}>
-                  <input
-                    style={{ display: "inline-block" }}
-                    className="ExtraStrapCheckoutInput relative left-[50%] translate-x-[-50%] w-3 h-3  md:w-3 md:h-8 "
-                    type="checkbox"
-                    name=""
-                    id=""
-                    onClick={(e) => extraStrapsSelector(e, index)}
-                  />
-                  <img
-                    className="w-9 h-9 lg:w-10 lg:h-10 xl:w-10 xl:h-10 object-cover object-center cursor-pointer"
-                    src={dial[0]}
-                    onClick={() => extraStrapsActivator(index)}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-          <div
-            className="nanigator2 z-[99999] landscape:lsc-mob:fixed landscape:lsc-mob:bottom-0 landscape:lsc-mob:left-0 landscape:lsc-mob:right-0 landscape:md:mx-auto mobile:left-0  flex items-center pt-2 pb-1 relative left-[3%] mid-xs:left-[0%] md:mt-3 
-         sm:left-[10%] md:-bottom-6 sm:bottom-[12px] sm:scale-75 md:scale-100  md:static"
-          >
-            <div
-              className="mx-1 text-[10px] sm:text-xs md:text-sm  sm:w-24 md:w-32  text-center rounded-full"
-              onClick={(e) =>
-                handleNavigator(
-                  "strapsNavigators",
-                  e,
-                  0,
-                  "imgContainer",
-                  0,
-                  straps
-                )
-              }
-            >
-              Bracelets
-            </div>
-            <div
-              className="mx-1 text-[10px] sm:text-xs md:text-sm w-[70px] sm:w-24 md:w-32  text-center rounded-full"
-              onClick={(e) =>
-                handleNavigator(
-                  "dialsNavigators",
-                  e,
-                  2,
-                  "imgContainer3",
-                  1,
-                  dials
-                )
-              }
-            >
-              {" "}
-              Dials
-            </div>
-            <div
-              className="mx-1 text-[10px] sm:text-xs md:text-sm w-[70px] sm:w-24 md:w-32  text-center rounded-full"
-              onClick={(e) =>
-                handleNavigator(
-                  "bezzelsNavigators",
-                  e,
-                  1,
-                  "imgContainer2",
-                  2,
-                  bazzels
-                )
-              }
-            >
-              Bezels
-            </div>
-
-            <div
-              className="mx-1 sm:text-xs md:text-sm  w-28 md:w-32  text-center text-[10px] rounded-full"
-              onClick={(e) =>
-                handleNavigator("extraStrapsNavigator", e, 3, "imgContainer4")
-              }
-            >
-              Extra straps
-            </div>
-          </div>
-        </div>
+        <Navigator
+          dialsBAGUETTE={dialsBAGUETTE}
+          dialsBRUSHED={dialsBRUSHED}
+          dialsROMAN={dialsROMAN}
+          dialsActivator={dialsActivator}
+          dials={dials}
+          settings={settings}
+          bazzels={bazzels}
+          bazzelsActivator={bazzelsActivator}
+          extraStraps={extraStraps}
+          extraStrapsSelector={extraStrapsSelector}
+          extraStrapsActivator={extraStrapsActivator}
+          straps={straps}
+          activator={activator}
+          handleNavigator={handleNavigator}
+        />
 
         {/*--------------------------------------------navigator parts end   --------------------------------------------- */}
         {/* <img src={dials1} alt="" /> */}

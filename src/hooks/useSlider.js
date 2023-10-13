@@ -194,6 +194,7 @@ const useSlider = () => {
         [straps[1], dialsBRUSHED[2], bazzels[4], 41],
       ]);
     }
+    //eslint-disable-next-line
   }, [click]);
 
   const activator = (activeIndex) => {
