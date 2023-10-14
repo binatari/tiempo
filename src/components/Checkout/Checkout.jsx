@@ -155,7 +155,7 @@ const Checkout = () => {
                             setInvoiceMod(true)
                             handleGoBack();
                         }}
-                        className="bg-white text-black rounded-md uppercase my-2 font-normal px-6 py-2">
+                        className="bg-white text-black rounded-xl uppercase my-2 font-medium px-10 py-2">
                         Order Now
                     </button>
                 </div>

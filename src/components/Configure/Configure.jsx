@@ -282,7 +282,7 @@ const Configure = () => {
 
         <div className="flex gap-x-2 items-center absolute top-24 md:top-24 sm:top-16 right-2 md:right-14 z-[9999]">
           <h1 className={`text-sm mobile:hidden ${isDark ? "text-white" : "text-black"}`}>
-            Size:
+           
           </h1>
           <div className="text-sm flex gap-x-2">
             <button

@@ -7,7 +7,12 @@ import { usePDF } from 'react-to-pdf';
 
 const InvoiceModal = ({ setInvoiceMod, currentWatch, extraStrapSelected }) => {
     const { toPDF, targetRef } = usePDF({ filename: 'invoice.pdf' });
-
+    // const sendData = () => {
+    //     const formData = new FormData();
+    //     formData.append("name", "Lcuky");
+    //     formData.append("address", "address");
+    //     formData.append("email", "email@test.com");
+    // }
 
     return (
         <div className="fixed z-[999999] top-0 left-0 flex justify-center items-center w-full h-screen bg-[#00000057]">
