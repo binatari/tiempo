@@ -4,15 +4,59 @@ import logo from '../../assets/tiempoLogoModal.png'
 import close from '../../assets/closeIcon.png'
 import DLC from './DLC';
 import { usePDF } from 'react-to-pdf';
+import { useState } from 'react';
+import { CircularProgress } from '@mui/material';
 
 const InvoiceModal = ({ setInvoiceMod, currentWatch, extraStrapSelected }) => {
     const { toPDF, targetRef } = usePDF({ filename: 'invoice.pdf' });
-    // const sendData = () => {
-    //     const formData = new FormData();
-    //     formData.append("name", "Lcuky");
-    //     formData.append("address", "address");
-    //     formData.append("email", "email@test.com");
+
+    // type {
+    //     name: string;
+    //     fullname: string;
+    //     address: string;
+    //     email: string;
+    //     senddate: string;
+    //     price: number;
+    //     invoicenumber: string;
+    //     status: string;
+    //     productdescription: string;
+    //     file: Buffer;
     // }
+
+    const [formData, setFormData] = useState({});
+    const [message, setMessage] = useState("");
+    const [loading, setLoading] = useState(false);
+
+    const handleChange = (e) => {
+        setFormData(p => ({
+            ...p,
+            [e.target.name]: e.target.value
+        }))
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setLoading(true);
+        try {
+            if (!formData.fullname || formData.fullname.length === 0) {
+                setMessage("Please enter a full name!");
+                return false;
+            } else if (!formData.email || formData.email.length === 0 || !formData.email.includes("@")) {
+                setMessage("Please enter valid email!");
+                return false;
+            } else if (!formData.address || formData.address.length === 0) {
+                setMessage("Please enter valid address!");
+                return false;
+            }
+            
+            toPDF()
+        } catch (error) {
+            setMessage("Error: " + error.message)
+        } finally {
+            setLoading(false);
+            setFormData({});
+        }
+    }
 
     return (
         <div className="fixed z-[999999] top-0 left-0 flex justify-center items-center w-full h-screen bg-[#00000057]">
@@ -32,25 +76,26 @@ const InvoiceModal = ({ setInvoiceMod, currentWatch, extraStrapSelected }) => {
                 <form className="flex text-xs flex-wrap w-full mb-[100vh] px-4 md:px-20 my-10 justify-between">
                     <div className="w-full md:w-1/2">
                         <label htmlFor="">Full name</label>
-                        <input type="text" className="w-11/12 my-2 focus:outline-black p-2 rounded-xl bg-white" />
+                        <input onChange={handleChange} type="text" name='fullname' className="w-11/12 my-2 focus:outline-black p-2 rounded-xl bg-white" />
                     </div>
                     <div className="w-full md:w-1/2">
                         <label htmlFor="">Address</label>
-                        <input type="text" className="w-11/12 my-2 focus:outline-black p-2 rounded-xl bg-white" />
+                        <input onChange={handleChange} type="text" name='address' className="w-11/12 my-2 focus:outline-black p-2 rounded-xl bg-white" />
                     </div>
                     <div className="w-full md:w-1/2">
                         <label htmlFor="">Email address</label>
-                        <input type="text" className="w-11/12 my-2 focus:outline-black p-2 rounded-xl bg-white" />
+                        <input onChange={handleChange} type="text" name='email' className="w-11/12 my-2 focus:outline-black p-2 rounded-xl bg-white" />
                     </div>
 
-                    <button onClick={(e) => {
-                        e.preventDefault()
-                        toPDF()
-                    }} className="absolute bottom-5 text-white right-20 w-20 shadow-lg h-20 rounded-full bg-black">
-                        Send
+                    <div className="w-full text-xs text-red-700">
+                        {message}
+                    </div>
+
+                    <button disabled={loading} onClick={handleSubmit} className="absolute bottom-5 text-white right-20 w-20 shadow-lg h-20 disabled:cursor-not-allowed rounded-full bg-black">
+                        {loading ? <CircularProgress /> : "Send"}
                     </button>
                 </form>
-                <DLC extraStrapSelected={extraStrapSelected} currentWatch={currentWatch} targetRef={targetRef} />
+                <DLC data={formData} extraStrapSelected={extraStrapSelected} currentWatch={currentWatch} targetRef={targetRef} />
             </div>
         </div>
     )
