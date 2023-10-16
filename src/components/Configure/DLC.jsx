@@ -3,7 +3,7 @@
 import logo from '../../assets/tiempoLogoModal.png'
 
 // eslint-disable-next-line react/prop-types
-export default function DLC({ targetRef, currentWatch, extraStrapSelected, data }) {
+export default function DLC({ targetRef, currentWatch, extraStrapSelected, data, invoiceNum }) {
     console.log(currentWatch)
     console.log(extraStrapSelected)
     const strapPrice = extraStrapSelected?.reduce((acc, curr) => acc + curr[2], 0);
@@ -29,7 +29,7 @@ export default function DLC({ targetRef, currentWatch, extraStrapSelected, data 
                     <br />
                     <h4 className="text-4xl uppercase">invoice</h4>
                     <br /><br />
-                    <p>Invoice ref number: <span className="ml-5">2030001</span></p>
+                    <p>Invoice ref number: <span className="ml-5">{invoiceNum}</span></p>
                     <p>Invoice date: <span className="ml-5">{new Date().toDateString()}</span></p>
 
                     {/* On client demand we commented below code */}
