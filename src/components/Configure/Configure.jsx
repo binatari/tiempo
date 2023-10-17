@@ -224,28 +224,8 @@ const Configure = () => {
     //eslint-disable-next-line
   }, []);
 
-  //const [totalPrice, setTotalPrice] = useState(0);
-  // useEffect(() => {
-  //   const totalSum =
-  //     (selectedSize == 41
-  //       ? initialWatch[activeWatch]?.[0][2]
-  //       : initialWatch[activeWatch]?.[0][2] - 750) +
-  //     initialWatch[activeWatch]?.[1][2] +
-  //     (selectedSize == 41
-  //       ? initialWatch[activeWatch]?.[2][2]
-  //       : initialWatch[activeWatch]?.[2][2] - 500 > 0
-  //         ? initialWatch[activeWatch]?.[2][2] - 500
-  //         : 0);
-  //   //setTotalPrice(totalSum);
-  // }, [selectedSize]);
-
-  //const [invoiceMod, setInvoiceMod] = useState(false);
-  console.log(activeWatch)
-  console.log(initialWatch[activeWatch]);
   const extraStrapSelected = extraStraps?.filter((v, i) => selectedExtraStrapsIndex?.includes(i));
-  console.log(extraStraps)
-  console.log(selectedExtraStrapsIndex)
-  console.log(extraStrapSelected)
+  
   return (
     <>
       {invoiceMod ? <InvoiceModal extraStrapSelected={extraStrapSelected} currentWatch={initialWatch[activeWatch]} setInvoiceMod={setInvoiceMod} /> : <></>}
