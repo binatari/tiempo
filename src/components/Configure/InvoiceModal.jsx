@@ -69,15 +69,7 @@ const InvoiceModal = ({ setInvoiceMod, currentWatch, extraStrapSelected }) => {
             }
 
             const response = await generatePDF(targetRef, { filename: 'invoice.pdf' })
-            const data1 = response.output("arraybuffer");
             const data2 = response.output("blob")
-            const data3 = response.output("bloburl");
-
-            //console.log(response);
-            console.log(data1)
-            console.log(data2);
-            console.log(data3)
-
 
             const headers = {
                 'Authorization': `Bearer ${localStorage.getItem("token")}`,
@@ -102,7 +94,7 @@ const InvoiceModal = ({ setInvoiceMod, currentWatch, extraStrapSelected }) => {
             newFormData.append('email', formData.email);
             newFormData.append('send_Date', new Date().toDateString());
             newFormData.append('price', totalWatchPrice);
-            newFormData.append('invoice_Number', 12345);
+            newFormData.append('invoice_Number', invoiceNum);
             newFormData.append('product_Description', 'Sample product description');
             newFormData.append('invoice_pdf', pdfFile);
             newFormData.append('status', "Sent");

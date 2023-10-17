@@ -28,6 +28,7 @@ import ToggleButton from "../../../Utils/ToggleButton/ToggleButton";
 import SelectedUsers from "../../../components/AdminDashboard/Users/SelectedUsers";
 import SearchHeader from "../../../components/AdminDashboard/Users/SearchHeader";
 import InvoicingTable from "../../../components/AdminDashboard/InvoicingSystem/InvoicingTable";
+import TableWrapper from "../../../components/AdminDashboard/Users/TableWrapper";
 
 const AllUsers = () => {
   const [users, setUsers] = useState([]);
@@ -39,7 +40,7 @@ const AllUsers = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const usersPerPage = 10;
   const [open, setOpen] = useState(false);
-
+  const [invNum, setInvNum] = useState("");
   const [showConfirmDeleteModal, setShowConfirmDeleteModal] = useState(false);
   const [showConfirmLockModal, setShowConfirmLockModal] = useState(false);
   const [showConfirmUnLockModal, setShowConfirmUnLockModal] = useState(false);
@@ -77,6 +78,7 @@ const AllUsers = () => {
   useEffect(() => {
     fetchUsers();
   }, []);
+
 
   const updateUsers = (newUsers) => {
     setUsers(newUsers);
@@ -233,8 +235,11 @@ const AllUsers = () => {
       navigate('/login')
     }
   };
-  console.log(usersToDisplay);
-  const { isDark } = useContext(Context)
+
+  // console.log(usersToDisplay);
+  const { isDark } = useContext(Context);
+
+
   return (
     <div className={` ${isDark ? 'bg-[#000000]' : 'bg-white'} min-h-screen`}>
       <div className="flex justify-between items-center px-5 lg:px-20 py-2">
@@ -262,6 +267,8 @@ const AllUsers = () => {
           />
         ) : (
           <SearchHeader
+            invNum={invNum}
+            setInvNum={setInvNum}
             currentTab={currentTab}
             setCurrentTab={setCurrentTab}
             isDark={isDark}
@@ -274,14 +281,14 @@ const AllUsers = () => {
 
         {currentTab === "Invoicing"
           ?
-          <InvoicingTable isDark={isDark} leftArrow={leftArrow} 
-          whiteLockIcon={whiteLockIcon}
-          BlackLockIcon={BlackLockIcon}
-
+          <InvoicingTable isDark={isDark} leftArrow={leftArrow}
+            whiteLockIcon={whiteLockIcon}
+            BlackLockIcon={BlackLockIcon}
+            invNum={invNum}
           />
           :
           <>
-            <div className="h-full overflow-x-auto">
+            <TableWrapper>
               <table className="w-full border-collapse overflow-x-auto">
                 <thead className="overflow-x-auto">
                   <tr>
@@ -406,7 +413,7 @@ const AllUsers = () => {
                   <p className={`text-center ${isDark ? 'text-white' : 'text-[#272c35]'}`}>No user to display.</p>
                 </div>
               )}
-            </div>
+            </TableWrapper>
             {usersToDisplay?.length > 0 && (
               <div className="mt-4 flex justify-center gap-3">
                 <button
