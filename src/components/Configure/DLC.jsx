@@ -4,13 +4,14 @@ import logo from '../../assets/tiempoLogoModal.png'
 
 // eslint-disable-next-line react/prop-types
 export default function DLC({ targetRef, currentWatch, extraStrapSelected, data, invoiceNum }) {
-    console.log(currentWatch)
-    console.log(extraStrapSelected)
+
+
     const strapPrice = extraStrapSelected?.reduce((acc, curr) => acc + curr[2], 0);
-    console.log(strapPrice)
     const totalWatchPrice = currentWatch[0][2] + currentWatch[1][2] + currentWatch[2][2];
+
+
     return (
-        <div className="w-screen p-10 text-xl relative" ref={targetRef}>
+        <div className="w-[1980px] p-10 text-xl relative" ref={targetRef}>
             <div className="flex w-full items-start justify-between">
                 <div>
                     <img src={logo} alt="" className="w-48 h-48 absolute top-2 left-0 object-contain" />
@@ -68,7 +69,7 @@ export default function DLC({ targetRef, currentWatch, extraStrapSelected, data,
                         <td className="w-1/3  py-2">
                             {currentWatch[0][1]}, {currentWatch[3]} mm<br />
                             {currentWatch[1][1]}<br />
-                            {currentWatch[1][1]}
+                            {currentWatch?.[2]?.[1] ?? ""}
                         </td>
                         <td className="w-1/3 text-center  py-2">1</td>
                         <td className="w-1/3 text-center  py-2">£{totalWatchPrice}</td>
@@ -113,12 +114,12 @@ export default function DLC({ targetRef, currentWatch, extraStrapSelected, data,
             <div className="w-7/12 mx-auto mt-4 font-medium bg-[#F3F3F3] p-4">
                 <div className="flex items-center my-3 justify-between">
                     <p>Account Number</p>
-                    <p>12345678</p>
+                    <p>21125704</p>
                 </div>
 
                 <div className="flex items-center my-3 justify-between">
                     <p>Sort Code</p>
-                    <p>12345678</p>
+                    <p>04-06-05</p>
                 </div>
 
                 <div className="flex items-center my-3 justify-between">
