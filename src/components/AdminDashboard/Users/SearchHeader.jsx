@@ -1,6 +1,3 @@
-/* eslint-disable react/prop-types */
-
-
 const SearchHeader = ({ isDark, SearchIcon, handleSearch, setOpen, AddUserIcon, currentTab, setCurrentTab, setInvNum }) => {
     return (
         <div className="flex justify-between">
