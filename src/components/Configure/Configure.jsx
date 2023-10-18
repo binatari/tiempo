@@ -259,8 +259,10 @@ const Configure = () => {
             onClick={handleLogOut}
           />
         </div>
+        
+        <div className="flex w-full flex-row-reverse px-5 md:px-10 justify-between">
 
-        <div className="flex gap-x-2 items-center absolute top-24 md:top-24 sm:top-16 right-2 md:right-14 z-[9999]">
+        <div className="flex gap-x-2 items-center  top-24 md:top-24 sm:top-16 right-2 md:right-14 z-[9999]">
           <h1 className={`text-sm mobile:hidden ${isDark ? "text-white" : "text-black"}`}>
 
           </h1>
@@ -286,7 +288,7 @@ const Configure = () => {
             </button>
           </div>
         </div>
-        <div className="absolute md:left-14 top-24 md:top-24 left-2 sm:top-16  z-[9999]">
+        <div className=" md:left-14 top-24 md:top-24 left-2 sm:top-16  z-[9999]">
           <Link
             to="/checkout"
             className={`py-0.5   cursor-pointer   border-b-2 ${isDark ? "text-white border-white" : "text-black border-black"
@@ -298,6 +300,7 @@ const Configure = () => {
               }}
               src={bag} className="w-8 h-8 object-contain" alt="" />
           </Link>
+        </div>
         </div>
 
         {/*--------------------------------------------initial size selection part end--------------------------------------------- */}

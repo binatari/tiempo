@@ -16,6 +16,7 @@ const Login = () => {
 
   const { isDark } = useContext(Context);
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const [loginInfo, setLoginInfo] = useState({
     support_id: "",
@@ -24,6 +25,7 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const response = await axios.post(`${SERVER_URL}/user/login`, loginInfo);
       if (response.status === 200) {
@@ -33,6 +35,8 @@ const Login = () => {
       }
     } catch (error) {
       toast.error(error.response?.data?.error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -125,8 +129,9 @@ const Login = () => {
 
               <div className="mt-6">
                 <button
+                disabled={loading}
                   className={`${isDark ? "bg-black" : "gradient_custom"
-                    } w-full rounded-[5px] font-medium py-2 text-[18px] text-[#ffff]`}
+                    } w-full disabled:cursor-not-allowed disabled:bg-gray-700 rounded-[5px] font-medium py-2 text-[18px] text-[#ffff]`}
                 >
                   Sign In
                 </button>

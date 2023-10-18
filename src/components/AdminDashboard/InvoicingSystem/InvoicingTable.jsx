@@ -16,6 +16,7 @@ const InvoicingTable = ({ isDark, leftArrow, invNum }) => {
     const [open, setOpen] = useState(false);
     const [message, setMessage] = useState("");
     const [opacity, setOpacity] = useState(0);
+    // const [pdfUrl, setPdfUrl] = useState("");
 
     const openSnackBar = () => {
         setOpen(true);
@@ -103,8 +104,67 @@ const InvoicingTable = ({ isDark, leftArrow, invNum }) => {
     // Function to check if "Next" button should be disabled
     const isNextDisabled = currentPage === Math.ceil(orders.length / itemsPerPage);
 
+    const handleDownload = async (id, invNumber) => {
+        try {
+            const response = await axios.get(`${SERVER_URL}/order/download/${id}`, {
+                headers: {
+                    "Authorization": `Bearer ${localStorage.getItem("token")}`
+                },
+                responseType: 'blob'
+            });
+            const data = await response.data;
+            console.log(data);
+            if (data) {
+                const url = window.URL.createObjectURL(new Blob([response.data]));
+                // Create a temporary link to trigger the download
+                const link = document.createElement('a');
+                link.href = url;
+                link.setAttribute('download', `${invNumber}.pdf`);
+                document.body.appendChild(link);
+                link.click();
+                // Clean up
+                window.URL.revokeObjectURL(url);
+            }
+
+        } catch (error) {
+            console.log(error);
+            setMessage("Something went wrong downloading invoice!")
+            openSnackBar();
+        }
+    }
+
+    const handleView = async (id) => {
+        try {
+            const response = await axios.get(`${SERVER_URL}/order/download/${id}`, {
+                headers: {
+                    "Authorization": `Bearer ${localStorage.getItem("token")}`
+                },
+                responseType: 'blob'
+            });
+            const data = await response.data;
+            console.log(data);
+            if (data) {
+
+                //Clean up
+                const blob = new Blob([response.data], { type: 'application/pdf' });
+                const url = window.URL.createObjectURL(blob);
+               // setPdfUrl(url);
+                window.open(url, '_blank');
+                console.log(url)
+
+            }
+        } catch (error) {
+            setMessage("Something went wrong viewing pdf!")
+            openSnackBar()
+        }
+    }
+
     return (
         <>
+            {/* <div className="text-white" style={{ width: '100%', height: '200px' }}>
+                <iframe src={pdfUrl} className="w-full h-full"></iframe>
+            </div> */}
+
             <Snackbar
                 open={open}
                 autoHideDuration={4000}
@@ -147,8 +207,10 @@ const InvoicingTable = ({ isDark, leftArrow, invNum }) => {
                                         <td className={"py-2 px-4 " + (isDark ? "text-white" : "text-black")}>{v.product_Description}</td>
                                         <td className={"py-2 px-4 " + (isDark ? "text-white" : "text-black")}>
                                             <img src={pdfIcon} alt="" className="h-10 w-10 mx-auto object-contain" />
-                                            <span className="cursor-pointer hover:underline">View</span>/
-                                            <a href={SERVER_URL + "/" + v?.invoice_pdf + ".pdf"} download={"invoice.pdf"} className="cursor-pointer hover:underline no-underline">Download</a>
+                                            <span
+                                                onClick={() => handleView(v?.invoice_pdf)}
+                                                className="cursor-pointer hover:underline">View</span>/
+                                            <span onClick={() => handleDownload(v?.invoice_pdf, v?.invoice_Number)} className="cursor-pointer hover:underline no-underline">Download</span>
                                         </td>
                                     </tr>
                                 ))
