@@ -75,7 +75,7 @@ const useSlider = () => {
   const dialsBAGUETTE = [
     [dialsBAGUETTE1, "The Baguette Baton", 2500, 0],
     [dialsBAGUETTE2, "The Baguette Baton", 2500, 1],
-    [dialsBAGUETTE3, "The Baguette Baton", 2500, 2],
+    [dialsBAGUETTE3, "The Baguette Dial", 2500, 2],
     [dialsBAGUETTE4, "The Baguette Baton", 2500, 3],
     [dialsBAGUETTE5, "The Baguette Baton", 2500, 4],
     [dialsBAGUETTE6, "The Baguette Baton", 2500, 5],
@@ -93,32 +93,32 @@ const useSlider = () => {
     [dialsBRUSHED8, "The Brushed", 1000, 15],
   ];
   const dialsROMAN = [
-    [dialsROMAN1, "Diamond Roman Numeral", 1000, 21],
-    [dialsROMAN2, "Diamond Roman Numeral", 1000, 22],
-    [dialsROMAN3, "Diamond Roman Numeral", 1000, 23],
-    [dialsROMAN4, "Diamond Roman Numeral", 1000, 24],
-    [dialsROMAN5, "Diamond Roman Numeral", 1000, 25],
-    [dialsROMAN6, "Diamond Roman Numeral", 1000, 26],
-    [dialsROMAN7, "Diamond Roman Numeral", 1000, 27],
-    [dialsROMAN8, "Diamond Roman Numeral", 1000, 28],
+    [dialsROMAN1, "Diamond Roman Numeral", 1500, 21],
+    [dialsROMAN2, "Diamond Roman Numeral", 1500, 22],
+    [dialsROMAN3, "Diamond Roman Numeral", 1500, 23],
+    [dialsROMAN4, "Diamond Roman Numeral", 1500, 24],
+    [dialsROMAN5, "Diamond Roman Numeral", 1500, 25],
+    [dialsROMAN6, "Diamond Roman Numeral", 1500, 26],
+    [dialsROMAN7, "Diamond Roman Numeral", 1500, 27],
+    [dialsROMAN8, "Diamond Roman Numeral", 1500, 28],
   ];
   const dials = [...dialsBAGUETTE, ...dialsBRUSHED, ...dialsROMAN];
   const bazzels = [
     [bezzel1, "Domed", 0, 0],
     [bezzel3, "Diamond Double Row", 2500, 1],
     [bezzel2, "Diamond Single Row", 2500, 2],
+    [bezzel10, "Baguette Sapphire Single Row", 2500, 9],
     [bezzel4, "Baguette Sapphire Single Row", 2500, 3],
     [bezzel5, "Baguette Sapphire Single Row", 2500, 4],
-    [bezzel6, "Baguette Sapphire Single Row", 2500, 5],
     [bezzel7, "Baguette Sapphire Single Row", 2500, 6],
     [bezzel8, "Baguette Sapphire Single Row", 2500, 7],
     [bezzel9, "Baguette Sapphire Single Row", 2500, 8],
-    [bezzel10, "Baguette Sapphire Single Row", 2500, 9],
     [bezzel11, "Baguette Sapphire Single Row", 2500, 10],
     [bezzel12, "Baguette Sapphire Single Row", 2500, 11],
     [bezzel13, "Baguette Sapphire Single Row", 2500, 12],
-    [bezzel14, "Baguette Sapphire Single Row", 2500, 13],
     [bezzel15, "Baguette Sapphire Single Row", 2500, 14],
+    [bezzel6, "Baguette Sapphire Single Row", 2500, 5],
+    [bezzel14, "Baguette Sapphire Single Row", 2500, 13],
   ];
   const extraStraps = [
     [extraStarp1, "des", 500, 0],
