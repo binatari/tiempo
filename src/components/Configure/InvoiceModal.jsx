@@ -155,7 +155,9 @@ const InvoiceModal = ({ setInvoiceMod, currentWatch, extraStrapSelected }) => {
                         {message}
                     </div>
 
-                    <button disabled={loading} onClick={handleSubmit} className="absolute bottom-5 text-white right-20 w-20 shadow-lg h-20 disabled:cursor-not-allowed rounded-full bg-black">
+                    <button disabled={loading} onClick={handleSubmit} className="absolute sm:bottom-5 
+                     bottom-32
+                    text-white right-20 w-20 shadow-lg h-20 disabled:cursor-not-allowed rounded-full bg-black">
                         {loading ? <CircularProgress /> : "Send"}
                     </button>
                 </form>
