@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import image from "../../../assets/Dials-section-bg.png";
 import group1 from "../../../assets/group1.png";
 import group2 from "../../../assets/group2.png";
