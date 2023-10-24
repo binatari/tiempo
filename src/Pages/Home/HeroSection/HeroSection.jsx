@@ -17,9 +17,9 @@ import TiempoBlacklogo from "../../../assets/TiempoBlackLogo.png";
 
 import logout from "../../../assets/logout.svg";
 
-import bannerImage1 from "../../../assets/HomePageImg/hero-1.png";
-import bannerImage2 from "../../../assets/HomePageImg/hero-2.png";
-import bannerImage3 from "../../../assets/HomePageImg/hero-3.png";
+import bannerImage1 from "../../../assets/blue.png";
+import bannerImage2 from "../../../assets/green.png";
+import bannerImage3 from "../../../assets/red.png";
 
 import Hero41mmWhite from "../../../assets/HomePageImg/36mmHeroWhite.svg";
 import Hero36mmWhite from "../../../assets/HomePageImg/41mmHeroWhite.svg";

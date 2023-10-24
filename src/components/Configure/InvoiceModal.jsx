@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from 'react';
 import { CircularProgress } from '@mui/material';
 import axios, { AxiosError } from 'axios';
 import SERVER_URL from '../../Shared/config';
+import { toast } from "react-hot-toast";
 
 function blobToFile(blob, fileName) {
     // Create a new File object with the Blob and fileName
@@ -103,6 +104,9 @@ const InvoiceModal = ({ setInvoiceMod, currentWatch, extraStrapSelected }) => {
             const genInvoiceRes = await axios.post(`${SERVER_URL}/order/upload`, newFormData, { headers });
             const data = await genInvoiceRes.data;
             console.log(data)
+            toast.success("Thank you for submitting your order! A confirmation mail is sent to your email id.", {
+                duration: 3000
+            })
             setInvoiceMod(false);
         } catch (error) {
             setMessage("Error: " + error.message)
@@ -131,7 +135,7 @@ const InvoiceModal = ({ setInvoiceMod, currentWatch, extraStrapSelected }) => {
                     Please complete the form. We will then forward your order request along with the invoice and bank payment instructions.
                 </p>
 
-                <form className="flex text-xs flex-wrap w-full mb-[100vh] px-4 md:px-20 my-10 justify-between">
+                <form className="flex text-xs flex-wrap w-full mb-[100vh] px-8 md:px-20 my-10 justify-between">
                     <div className="w-full md:w-1/2">
                         <label htmlFor="">Full name</label>
                         <input
@@ -155,7 +159,9 @@ const InvoiceModal = ({ setInvoiceMod, currentWatch, extraStrapSelected }) => {
                         {message}
                     </div>
 
-                    <button disabled={loading} onClick={handleSubmit} className="absolute bottom-5 text-white right-20 w-20 shadow-lg h-20 disabled:cursor-not-allowed rounded-full bg-black">
+                    <button disabled={loading} onClick={handleSubmit} className="absolute sm:bottom-5 
+                     bottom-32
+                    text-white right-20 w-20 shadow-lg h-20 disabled:cursor-not-allowed rounded-full bg-black">
                         {loading ? <CircularProgress /> : "Send"}
                     </button>
                 </form>
