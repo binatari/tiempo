@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import image1 from "../../../assets/HomePageImg/StrapsImg/strap1.png";
 import image2 from "../../../assets/HomePageImg/StrapsImg/strap2.png";
 import image3 from "../../../assets/HomePageImg/StrapsImg/strap3.png";
@@ -9,7 +9,7 @@ import strapColor3 from "../../../assets/HomePageImg/StrapsImg/strapColor3.png";
 import strapColor4 from "../../../assets/HomePageImg/StrapsImg/strapColor4.png";
 import strapColor5 from "../../../assets/HomePageImg/StrapsImg/strapColor5.png";
 import strapColor6 from "../../../assets/HomePageImg/StrapsImg/strapColor6.png";
-import strapColor7 from "../../../assets/HomePageImg/StrapsImg/strapColor7.png";
+// import strapColor7 from "../../../assets/HomePageImg/StrapsImg/strapColor7.png";
 import { Context } from "../../../Context/MainContext";
 
 const TheStraps = () => {
@@ -46,7 +46,7 @@ const TheStraps = () => {
                <img className="mx-auto mid-xl:w-[95.76px] mid-xl:h-[156.99px]" src={strapColor4} alt="straps" />
                <img className="mx-auto mid-xl:w-[95.76px] mid-xl:h-[156.99px]" src={strapColor5} alt="straps" />
                <img className="mx-auto mid-xl:w-[95.76px] mid-xl:h-[156.99px]" src={strapColor6} alt="straps" />
-               <img className="mx-auto mid-xl:w-[95.76px] mid-xl:h-[156.99px]" src={strapColor7} alt="straps" />
+               {/* <img className="mx-auto mid-xl:w-[95.76px] mid-xl:h-[156.99px]" src={strapColor7} alt="straps" /> */}
               
              </div>
     </div>
