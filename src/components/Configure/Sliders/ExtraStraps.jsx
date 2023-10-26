@@ -25,7 +25,7 @@ const ExtraStraps = ({ initialWatch, activeWatch, isDark, extraStraps }) => {
                                 <img
                                     src={item[0]}
                                     alt="face"
-                                    className="img1 w-[100%] left-[2%] h-[70%] top-[50%] md:translate-y-[-50%] mobile:translate-y-[-50%] sm:translate-y-[-70%] sm:scale-75 md:scale-100 absolute"
+                                    className="img1 w-[100%] left-[2%] h-[70%] top-[50%] md:translate-y-[-50%] mobile:translate-y-[-50%] sm:translate-y-[-70%] sm:scale-75 md:scale-100 absolute object-cover"
                                 />
                             }
                         </div>

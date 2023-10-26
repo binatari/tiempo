@@ -25,7 +25,7 @@ const Footer = () => {
                 <p className=' uppercase text-gray-400 md:text-[10px] text-[8px] mt-8'>
                     Tiempo.Copyright 2023.All right reserved
                 </p>
-                <p className={` my-0 text-gray-400 md:text-[10px] text-[8px] mt-2`}>Web App Developed by <a href="https://lintechgroup.co.uk/" rel='noreferrer' target='_blank'>Lintech Group</a> </p>
+                
             </div>
 
         </div>
