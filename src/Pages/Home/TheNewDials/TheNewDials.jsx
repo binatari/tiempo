@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import image from "../../../assets/Dials-section-bg.png";
-import group1 from "../../../assets/group1.png";
-import group2 from "../../../assets/group2.png";
-import group3 from "../../../assets/group3.png";
+import group1 from "../../../assets/Baguette.jpg";
+import group2 from "../../../assets/Brushed.jpg";
+import group3 from "../../../assets/DiamondRoman.jpg";
 import { Context } from "../../../Context/MainContext";
 
 const TheNewDials = () => {
@@ -50,13 +50,13 @@ const TheNewDials = () => {
                 key={index}
                 className={`${
                   isDark ? "text-white" : "text-black"
-                }  grid lg:grid-cols-3 gap-5 mid-xl:gap-x-[65px] gap-y-10 mid-xl:gap-y-10 items-center`}
+                }  grid lg:grid-cols-3 gap-5 mid-xl:gap-x-5 gap-y-5 mid-xl:gap-y-5 items-center`}
               >
                 <div className="lg:col-span-2 hidden lg:block">
                   <img
                     src={image}
                     alt=""
-                    className="w-10/12 mid-xl:w-11/12  mx-auto "
+                    className="w-10/12 mid-xl:w-11/12 max-h-[200px] object-cover  mx-auto "
                   />
                 </div>
                 <div className="lg:flex flex-col gap-3 mid-xl:gap-1 hidden">

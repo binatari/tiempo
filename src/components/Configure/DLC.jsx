@@ -114,17 +114,17 @@ export default function DLC({ targetRef, currentWatch, extraStrapSelected, data,
             <div className="w-7/12 mx-auto mt-4 font-medium bg-[#F3F3F3] p-4">
                 <div className="flex items-center my-3 justify-between">
                     <p>Account Number</p>
-                    <p>21125704</p>
+                    <p>03464271</p>
                 </div>
 
                 <div className="flex items-center my-3 justify-between">
                     <p>Sort Code</p>
-                    <p>04-06-05</p>
+                    <p>04-03-70</p>
                 </div>
 
                 <div className="flex items-center my-3 justify-between">
                     <p>Beneficiary</p>
-                    <p>RW Luxury LTD</p>
+                    <p>RW LUXURY LTD</p>
                 </div>
 
                 <div className="uppercase !font-bold mt-6 text-center w-full">
