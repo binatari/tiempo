@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import image from "../../../assets/Dials-section-bg.png";
-import group1 from "../../../assets/Baguette.jpg";
-import group2 from "../../../assets/Brushed.jpg";
-import group3 from "../../../assets/DiamondRoman.jpg";
+import group1 from "../../../assets/group11.png";
+import group2 from "../../../assets/group12.png";
+import group3 from "../../../assets/group13.png";
 import { Context } from "../../../Context/MainContext";
 
 const TheNewDials = () => {
