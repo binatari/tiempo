@@ -35,19 +35,14 @@ import dialsROMAN8 from "../assets/1K Renders rolex watch/Double Diamond rolex w
 import bezzel1 from "../assets/bezzels/Default.png";
 import bezzel2 from "../assets/bezzels/02.png";
 import bezzel3 from "../assets/bezzels/01.png";
-import bezzel4 from "../assets/bezzels/blue.png";
-import bezzel5 from "../assets/bezzels/green.png";
-import bezzel6 from "../assets/bezzels/Red.png";
-import bezzel7 from "../assets/bezzels/Brown.png";
-import bezzel8 from "../assets/bezzels/Dark-Blue-B.png";
-import bezzel9 from "../assets/bezzels/Yellow-B.png";
-import bezzel10 from "../assets/bezzels/Black.png";
-import bezzel11 from "../assets/bezzels/Orange.png";
-import bezzel12 from "../assets/bezzels/Pink.png";
-import bezzel13 from "../assets/bezzels/Purple.png";
-import bezzel14 from "../assets/bezzels/grey.png";
-import bezzel15 from "../assets/bezzels/Light-Brown.png";
-import bezzel16 from "../assets/bezzels/blue-d.png";
+import bezzel4 from "../assets/bezzels/blue.png"; //
+import bezzel5 from "../assets/bezzels/green.png"; //
+import bezzel6 from "../assets/bezzels/Red.png"; //
+import bezzel10 from "../assets/bezzels/Black.png";//
+import bezzel12 from "../assets/bezzels/Pink.png"; //
+import bezzel13 from "../assets/bezzels/Purple.png"; //
+import bezzel14 from "../assets/bezzels/grey.png"; //
+import bezzel16 from "../assets/bezzels/blue-d.png"; //
 // extra straps
 import extraStarp1 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Body/Black strap.png";
 import extraStarp2 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Body/Blue strap.png";
@@ -113,13 +108,8 @@ const useSlider = () => {
     [bezzel10, "Baguette Sapphire Single Row", 2500, 9],
     [bezzel4, "Baguette Sapphire Single Row", 2500, 3],
     [bezzel5, "Baguette Sapphire Single Row", 2500, 4],
-    [bezzel7, "Baguette Sapphire Single Row", 2500, 6],
-    [bezzel8, "Baguette Sapphire Single Row", 2500, 7],
-    [bezzel9, "Baguette Sapphire Single Row", 2500, 8],
-    [bezzel11, "Baguette Sapphire Single Row", 2500, 10],
     [bezzel12, "Baguette Sapphire Single Row", 2500, 11],
     [bezzel13, "Baguette Sapphire Single Row", 2500, 12],
-    [bezzel15, "Baguette Sapphire Single Row", 2500, 14],
     [bezzel6, "Baguette Sapphire Single Row", 2500, 5],
     [bezzel14, "Baguette Sapphire Single Row", 2500, 13],
     [bezzel16, "Baguette Sapphire Single Row", 2500, 13],
