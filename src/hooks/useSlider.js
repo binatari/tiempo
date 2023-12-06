@@ -19,6 +19,7 @@ import dialsBRUSHED5 from "../assets/1K Renders rolex watch/Rolex rubberband wat
 import dialsBRUSHED6 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Dial/Dark-Blue.png";
 import dialsBRUSHED7 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Dial/Red.png";
 import dialsBRUSHED8 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Dial/White.png";
+import dialsBRUSHED9 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Dial/Blue Logo.png";
 
 // dials ROMAN
 import dialsROMAN1 from "../assets/1K Renders rolex watch/Double Diamond rolex watch/Dial/Black.png";
@@ -34,9 +35,9 @@ import dialsROMAN8 from "../assets/1K Renders rolex watch/Double Diamond rolex w
 import bezzel1 from "../assets/bezzels/Default.png";
 import bezzel2 from "../assets/bezzels/02.png";
 import bezzel3 from "../assets/bezzels/01.png";
-import bezzel4 from "../assets/bezzels/Blue-dimond.png";
+import bezzel4 from "../assets/bezzels/blue.png";
 import bezzel5 from "../assets/bezzels/green.png";
-import bezzel6 from "../assets/bezzels/Red-B.png";
+import bezzel6 from "../assets/bezzels/Red.png";
 import bezzel7 from "../assets/bezzels/Brown.png";
 import bezzel8 from "../assets/bezzels/Dark-Blue-B.png";
 import bezzel9 from "../assets/bezzels/Yellow-B.png";
@@ -44,8 +45,9 @@ import bezzel10 from "../assets/bezzels/Black.png";
 import bezzel11 from "../assets/bezzels/Orange.png";
 import bezzel12 from "../assets/bezzels/Pink.png";
 import bezzel13 from "../assets/bezzels/Purple.png";
-import bezzel14 from "../assets/bezzels/White.png";
+import bezzel14 from "../assets/bezzels/grey.png";
 import bezzel15 from "../assets/bezzels/Light-Brown.png";
+import bezzel16 from "../assets/bezzels/blue-d.png";
 // extra straps
 import extraStarp1 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Body/Black strap.png";
 import extraStarp2 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Body/Blue strap.png";
@@ -91,6 +93,7 @@ const useSlider = () => {
     [dialsBRUSHED6, "The Brushed", 1000, 13],
     [dialsBRUSHED7, "The Brushed", 1000, 14],
     [dialsBRUSHED8, "The Brushed", 1000, 15],
+    [dialsBRUSHED9, "The Brushed", 1000, 16]
   ];
   const dialsROMAN = [
     [dialsROMAN1, "Diamond Roman Numeral", 1500, 21],
@@ -119,6 +122,7 @@ const useSlider = () => {
     [bezzel15, "Baguette Sapphire Single Row", 2500, 14],
     [bezzel6, "Baguette Sapphire Single Row", 2500, 5],
     [bezzel14, "Baguette Sapphire Single Row", 2500, 13],
+    [bezzel16, "Baguette Sapphire Single Row", 2500, 13],
   ];
   const extraStraps = [
     [extraStarp1, "des", 500, 0],

@@ -69,7 +69,8 @@ export default function DLC({ targetRef, currentWatch, extraStrapSelected, data,
                         <td className="w-1/3  py-2">
                             {currentWatch[0][1]}, {currentWatch[3]} mm<br />
                             {currentWatch[1][1]}<br />
-                            {currentWatch?.[2]?.[1] ?? ""}
+                            {currentWatch?.[2]?.[1] ?? ""} <br />
+                            Final Sale - *Item not returnable*
                         </td>
                         <td className="w-1/3 text-center  py-2">1</td>
                         <td className="w-1/3 text-center  py-2">£{totalWatchPrice}</td>
