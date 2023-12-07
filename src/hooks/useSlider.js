@@ -37,7 +37,7 @@ import bezzel2 from "../assets/bezzels/02.png";
 import bezzel3 from "../assets/bezzels/01.png";
 import bezzel4 from "../assets/bezzels/blue.png"; //
 import bezzel5 from "../assets/bezzels/green.png"; //
-import bezzel6 from "../assets/bezzels/Red.png"; //
+import bezzel6 from "../assets/bezzels/red.png"; //
 import bezzel10 from "../assets/bezzels/Black.png";//
 import bezzel12 from "../assets/bezzels/Pink.png"; //
 import bezzel13 from "../assets/bezzels/Purple.png"; //
