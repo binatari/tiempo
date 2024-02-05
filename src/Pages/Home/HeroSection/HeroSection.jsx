@@ -89,7 +89,6 @@ const HeroSection = () => {
   }, []);
   const { isDark } = useContext(Context);
 
-
   return (
     <div
       className="bg-cover mid-xl:bg-contain  xxxl:pt-[420px] xxl:pt-72 xl:pt-64 mid-xl:pt-48 bg-center md:bg-contain bg-no-repeat  "
@@ -101,8 +100,9 @@ const HeroSection = () => {
         relative transition-all duration-300 ease-in-out`}
       >
         <div
-          className={`fixed backdrop-blur-xl top-0 right-0 w-full z-50 ${isDark ? "bg-black/50" : "bg-white/50"
-            }`}
+          className={`fixed backdrop-blur-xl top-0 right-0 w-full z-50 ${
+            isDark ? "bg-black/50" : "bg-white/50"
+          }`}
         >
           <div className="flex justify-between items-center px-5 lg:px-40 py-2">
             <ToggleButton />
@@ -144,12 +144,16 @@ const HeroSection = () => {
               </>
             )}
 
-            <img
-              className={`text-sm cursor-pointer w-16 h-16`}
-              src={logout}
-              alt=""
-              onClick={handleLogOut}
-            />
+            {localStorage.getItem("token") ? (
+              <img
+                className={`text-sm cursor-pointer w-16 h-16`}
+                src={logout}
+                alt=""
+                onClick={handleLogOut}
+              />
+            ) : (
+              <div />
+            )}
           </div>
         </div>
 
@@ -230,19 +234,20 @@ const HeroSection = () => {
         </p> */}
 
         <div
-          className={`absolute md:bottom-24 lsc-mob:bottom-64 mid-sm:bottom-24 lg:bottom-20 xl:bottom-24 mid-xl:bottom-24 left-5 right-0 flex  justify-center items-center z-20  ${isDark ? "text-[#A6A6A6]" : "text-black"
-            }`}
+          className={`absolute md:bottom-24 lsc-mob:bottom-64 mid-sm:bottom-24 lg:bottom-20 xl:bottom-24 mid-xl:bottom-24 left-5 right-0 flex  justify-center items-center z-20  ${
+            isDark ? "text-[#A6A6A6]" : "text-black"
+          }`}
         >
           0{currentIndex + 1}/0{banners.length}
           <div className="flex justify-center items-center ">
             <div className="relative">
-
               {currentIndex === 0 && (
                 <Link
                   to={"/configure/1"}
                   onClick={() => setClick("1")}
-                  className={`border border-gray-300 rounded-full text-gray-950 flex items-center gap-4 ml-4  drop-shadow-[#7D9EAC] md:px-9 px-5 lg:text-[18px] md:text-[15px] text-[12px] uppercase  py-3 ${isDark ? "bg-[#FCFCFC15] text-white" : "bg-[#ffff]"
-                    } `}
+                  className={`border border-gray-300 rounded-full text-gray-950 flex items-center gap-4 ml-4  drop-shadow-[#7D9EAC] md:px-9 px-5 lg:text-[18px] md:text-[15px] text-[12px] uppercase  py-3 ${
+                    isDark ? "bg-[#FCFCFC15] text-white" : "bg-[#ffff]"
+                  } `}
                 >
                   <span>
                     {isDark ? (
@@ -258,7 +263,6 @@ const HeroSection = () => {
                         alt=""
                       />
                     )}
-
                   </span>
                   Configure
                 </Link>
@@ -267,8 +271,9 @@ const HeroSection = () => {
                 <Link
                   to={"/configure/1"}
                   onClick={() => setClick("2")}
-                  className={`border border-gray-300 rounded-full text-gray-950 flex items-center gap-4 ml-4  drop-shadow-[#7D9EAC] md:px-9 px-5 lg:text-[18px] md:text-[15px] text-[12px] uppercase  py-3 ${isDark ? "bg-[#FCFCFC15] text-white" : "bg-[#ffff]"
-                    } `}
+                  className={`border border-gray-300 rounded-full text-gray-950 flex items-center gap-4 ml-4  drop-shadow-[#7D9EAC] md:px-9 px-5 lg:text-[18px] md:text-[15px] text-[12px] uppercase  py-3 ${
+                    isDark ? "bg-[#FCFCFC15] text-white" : "bg-[#ffff]"
+                  } `}
                 >
                   <span>
                     {isDark ? (
@@ -293,8 +298,9 @@ const HeroSection = () => {
                 <Link
                   to={"/configure/1"}
                   onClick={() => setClick("3")}
-                  className={`border border-gray-300 rounded-full text-gray-950 flex items-center gap-4 ml-4  drop-shadow-[#7D9EAC] md:px-9 px-5 lg:text-[18px] md:text-[15px] text-[12px] uppercase  py-3 ${isDark ? "bg-[#FCFCFC15] text-white" : "bg-[#ffff]"
-                    } `}
+                  className={`border border-gray-300 rounded-full text-gray-950 flex items-center gap-4 ml-4  drop-shadow-[#7D9EAC] md:px-9 px-5 lg:text-[18px] md:text-[15px] text-[12px] uppercase  py-3 ${
+                    isDark ? "bg-[#FCFCFC15] text-white" : "bg-[#ffff]"
+                  } `}
                 >
                   <span>
                     {isDark ? (
