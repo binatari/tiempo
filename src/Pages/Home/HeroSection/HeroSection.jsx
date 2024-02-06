@@ -152,7 +152,10 @@ const HeroSection = () => {
                 onClick={handleLogOut}
               />
             ) : (
-              <div />
+              <div
+              className={`text-sm cursor-pointer w-16 h-16`}
+              
+              />
             )}
           </div>
         </div>
