@@ -152,14 +152,19 @@ const App = () => {
             <Toaster />
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route
+                path="/configure/:selected"
+                element={<Configure />}
+                // element={(isAdmin || isGuest) && <ConfigurationPage />}
+              />
+              <Route
+                path="/popular-collection/:id"
+                element={<PopularCollectionDetails />}
+              />
               {authenticated ? (
                 <>
                   <Route path="/" element={(isAdmin || isGuest) && <Home />} />
-                  <Route
-                    path="/configure/:selected"
-                    element={(isAdmin || isGuest) && <Configure />}
-                    // element={(isAdmin || isGuest) && <ConfigurationPage />}
-                  />
+
                   <Route
                     path="/checkout"
                     element={(isAdmin || isGuest) && <Checkout></Checkout>}
@@ -169,12 +174,7 @@ const App = () => {
                     path="/adminUsers"
                     element={isAdmin ? <AllUsers /> : <Error />}
                   />
-                  <Route
-                    path="/popular-collection/:id"
-                    element={
-                      (isAdmin || isGuest) && <PopularCollectionDetails />
-                    }
-                  />
+
                   <Route path="/login" element={<Login />} />
                 </>
               ) : (
