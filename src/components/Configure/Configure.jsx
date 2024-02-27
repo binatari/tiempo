@@ -6,7 +6,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import logoBlack from "../../assets/TiempoBlackLogo.png";
 import logout from "../../assets/logout.svg";
-import bag from "../../assets/bag.svg";
 import logo from "../../assets/TiempoWhiteLogo.png";
 import ToggleButton from "../../Utils/ToggleButton/ToggleButton";
 import { Context } from "../../Context/MainContext";
@@ -293,12 +292,8 @@ const Configure = () => {
             to="/checkout"
             className={`py-0.5   cursor-pointer   border-b-2 ${isDark ? "text-white border-white" : "text-black border-black"
               }`}
-          >
-            <img
-              style={{
-                filter: isDark ? 'invert(1)' : ""
-              }}
-              src={bag} className="w-8 h-8 object-contain" alt="" />
+          >  
+           Buy now
           </Link>
         </div>
         </div>
