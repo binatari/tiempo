@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 
 const SizeSelection = ({ initialWatch, activeWatch, isDark, selectedSize, setInvoiceMod }) => {
+    console.log(initialWatch)
     return (
         <div className="sliderContainer sm:-mt-10 md:mt-0 sliderContainer1">
             {/*--------------------------------------------slider 1 straps part start --------------------------------------------- */}
