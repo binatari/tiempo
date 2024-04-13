@@ -15,7 +15,9 @@ const Navigator = ({ dialsBAGUETTE,
     extraStrapsActivator,
     straps,
     activator,
-    handleNavigator, }) => {
+    handleNavigator,
+    click
+ }) => {
     return (
         <div className="navigatorContainers">
             <div className="navigator1 landscape:lsc-mob:pb-20  xl:my-5  mx-auto overflow-hidden">
@@ -129,7 +131,7 @@ const Navigator = ({ dialsBAGUETTE,
                 </div>
 
                 <div className="strapsNavigators items-center justify-center w-full overflow-hidden hidden">
-                    {straps?.map((dial, index) => (
+                    {straps.filter((strap, i)=> click == '10' ? i >= 2 : i < 2)?.map((dial, index) => (
                         <img
                             key={index}
                             className="mid-xl:w-10 lg:w-8 lg:h-8  mid-xl:h-10 w-12 h-14  object-cover object-center"

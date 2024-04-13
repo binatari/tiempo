@@ -39,6 +39,8 @@ const Configure = () => {
     setSelectedSize,
     selectedExtraStrapsIndex,
     extraStrapsSelector,
+    setClick,
+    click
   } = useSliderContext();
 
   const { selected } = useParams();
@@ -286,6 +288,27 @@ const Configure = () => {
               36
             </button>
           </div>
+          <div className="text-sm flex gap-x-2">
+            <button
+              onClick={() => setClick('11')}
+              className={`px-3 py-1 rounded-md ${click !== '10'
+                ? "bg-white text-black border border-gray-400"
+                : "border border-transparent bg-black text-white"
+                } 
+                            `}
+            >
+              Regular 
+            </button>
+            <button
+              onClick={() => setClick('10')}
+              className={`px-3 py-1  rounded-md   ${click == '10'
+                ? "bg-white text-black border border-gray-400"
+                : "border border-transparent bg-black text-white"
+                }`}
+            >
+              Blacked out
+            </button>
+          </div>
         </div>
         <div className=" md:left-14 top-24 md:top-24 left-2 sm:top-16  z-[9999]">
           <Link
@@ -299,7 +322,7 @@ const Configure = () => {
         </div>
 
         {/*--------------------------------------------initial size selection part end--------------------------------------------- */}
-        <SizeSelection initialWatch={initialWatch} activeWatch={activeWatch} isDark={isDark}
+        <SizeSelection initialWatch={initialWatch} click={click} activeWatch={activeWatch} isDark={isDark}
           selectedSize={selectedSize} setInvoiceMod={setInvoiceMod} />
 
         {/* ----------------------------------------------------------------slider two bezzels --------------------------------------------------------------  */}
@@ -334,6 +357,7 @@ const Configure = () => {
           extraStrapsActivator={extraStrapsActivator}
           straps={straps}
           activator={activator}
+          click={click}
           handleNavigator={handleNavigator}
         />
 

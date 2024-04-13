@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import starp1 from "../assets/BODY/Body default.png";
 import starp2 from "../assets/BODY/Body.png";
+import starp3 from "../assets/BODY/Body default black.png";
+import starp4 from "../assets/BODY/Body black.png";
 // dials baguettel
 import dialsBAGUETTE1 from "../assets/1K Renders rolex watch/Baguette watch/Dial/Black.png";
 import dialsBAGUETTE2 from "../assets/1K Renders rolex watch/Baguette watch/Dial/Blue.png";
@@ -67,6 +69,8 @@ const useSlider = () => {
   const straps = [
     [starp1, "DATEJUST OYSTER", 11250, 0],
     [starp2, "DATEJUST JUBILEE", 12000, 1],
+    [starp3, "DATEJUST OYSTER", 12750, 2],
+    [starp4, "DATEJUST JUBILEE", 13500, 3],
   ];
 
   const dialsBAGUETTE = [
@@ -187,6 +191,18 @@ const useSlider = () => {
         [straps[0], dialsBRUSHED[2], bazzels[4], 36],
         [straps[1], dialsBRUSHED[2], bazzels[4], 41],
       ]);
+    }
+    if (click == "10") {
+      let blackOut = initialWatch
+      blackOut[0][0] = straps[2]
+      blackOut[1][0] = straps[3]
+      setInitialWatch([...blackOut]);
+    }
+    if (click == "11") {
+      let regular = initialWatch
+      regular[0][0] = straps[0]
+      regular[1][0] = straps[1]
+      setInitialWatch([...regular]);
     }
     //eslint-disable-next-line
   }, [click]);
