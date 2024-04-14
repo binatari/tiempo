@@ -33,6 +33,19 @@ import dialsROMAN6 from "../assets/1K Renders rolex watch/Double Diamond rolex w
 import dialsROMAN7 from "../assets/1K Renders rolex watch/Double Diamond rolex watch/Dial/Red.png";
 import dialsROMAN8 from "../assets/1K Renders rolex watch/Double Diamond rolex watch/Dial/White.png";
 
+// dials ROMAN
+import dialsROMANBLACK1 from "../assets/roman-black/black.png";
+import dialsROMANBLACK2 from "../assets/roman-black/dark-blue.png";
+import dialsROMANBLACK3 from "../assets/roman-black/green.png";
+import dialsROMANBLACK4 from "../assets/roman-black/grey.png";
+import dialsROMANBLACK5 from "../assets/roman-black/pink.png";
+import dialsROMANBLACK6 from "../assets/roman-black/purple.png";
+import dialsROMANBLACK7 from "../assets/roman-black/brown.png";
+import dialsROMANBLACK8 from "../assets/roman-black/orange.png";
+import dialsROMANBLACK9 from "../assets/roman-black/white.png";
+import dialsROMANBLACK10 from "../assets/roman-black/yellow.png";
+import dialsROMANBLACK11 from "../assets/roman-black/light-blue.png";
+
 // bezzels
 import bezzel1 from "../assets/bezzels/Default.png";
 import bezzel2 from "../assets/bezzels/02.png";
@@ -54,6 +67,19 @@ import extraStarp5 from "../assets/1K Renders rolex watch/Rolex rubberband watch
 import extraStarp6 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Body/Purple strap.png";
 import extraStarp7 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Body/Red strap.png";
 import extraStarp8 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Body/White strap.png";
+import extraStarp9 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Body/black.png";
+import extraStarp10 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Body/blue.png";
+import extraStarp11 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Body/brown.png";
+import extraStarp12 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Body/cream.png";
+import extraStarp13 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Body/dark blue.png";
+import extraStarp14 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Body/green.png";
+import extraStarp15 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Body/grey.png";
+import extraStarp16 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Body/orange.png";
+import extraStarp17 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Body/pink.png";
+import extraStarp18 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Body/purple.png";
+import extraStarp19 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Body/red.png";
+import extraStarp20 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Body/white.png";
+import extraStarp21 from "../assets/1K Renders rolex watch/Rolex rubberband watch/Body/yellow.png";
 // import extraStarp9 from '../assets/1K Renders rolex watch/Rolex rubberband watch/Body/White strap.png'
 // NEW  DIALS
 
@@ -94,6 +120,19 @@ const useSlider = () => {
     [dialsBRUSHED8, "The Brushed", 1000, 15],
     [dialsBRUSHED9, "The Brushed", 1000, 16]
   ];
+  const dialsBLACK = [
+    [dialsROMANBLACK1, "Diamond Roman Numeral", 1500, 31],
+    [dialsROMANBLACK2, "Diamond Roman Numeral", 1500, 32],
+    [dialsROMANBLACK3, "Diamond Roman Numeral", 1500, 33],
+    [dialsROMANBLACK4, "Diamond Roman Numeral", 1500, 34],
+    [dialsROMANBLACK5, "Diamond Roman Numeral", 1500, 35],
+    [dialsROMANBLACK6, "Diamond Roman Numeral", 1500, 36],
+    [dialsROMANBLACK7, "Diamond Roman Numeral", 1500, 37],
+    [dialsROMANBLACK8, "Diamond Roman Numeral", 1500, 38],
+    [dialsROMANBLACK9, "Diamond Roman Numeral", 1500, 39],
+    [dialsROMANBLACK10, "Diamond Roman Numeral", 1500, 40],
+    [dialsROMANBLACK11, "Diamond Roman Numeral", 1500, 41],
+  ];
   const dialsROMAN = [
     [dialsROMAN1, "Diamond Roman Numeral", 1500, 21],
     [dialsROMAN2, "Diamond Roman Numeral", 1500, 22],
@@ -104,7 +143,7 @@ const useSlider = () => {
     [dialsROMAN7, "Diamond Roman Numeral", 1500, 27],
     [dialsROMAN8, "Diamond Roman Numeral", 1500, 28],
   ];
-  const dials = [...dialsBAGUETTE, ...dialsBRUSHED, ...dialsROMAN];
+  const dials = [...dialsBAGUETTE, ...dialsBRUSHED, ...dialsROMAN, ...dialsBLACK];
   const bazzels = [
     [bezzel1, "Domed", 0, 0],
     [bezzel3, "Diamond Double Row", 2500, 1],
@@ -127,6 +166,19 @@ const useSlider = () => {
     [extraStarp6, "des", 500, 5],
     [extraStarp7, "des", 500, 6],
     [extraStarp8, "des", 500, 7],
+    [extraStarp9, "des", 500, 8],
+    [extraStarp10, "des", 500, 9],
+    [extraStarp11, "des", 500, 10],
+    [extraStarp12, "des", 500, 11],
+    [extraStarp13, "des", 500, 12],
+    [extraStarp14, "des", 500, 13],
+    [extraStarp15, "des", 500, 14],
+    [extraStarp16, "des", 500, 15],
+    [extraStarp17, "des", 500, 16],
+    [extraStarp18, "des", 500, 17],
+    [extraStarp19, "des", 500, 18],
+    [extraStarp20, "des", 500, 19],
+    [extraStarp21, "des", 500, 20],
   ];
 
   const [click, setClick] = useState(null);
@@ -394,6 +446,7 @@ const useSlider = () => {
     click,
     extraStrapsSelector,
     selectedExtraStrapsIndex,
+    dialsBLACK
   };
 };
 

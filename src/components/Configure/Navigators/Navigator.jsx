@@ -16,13 +16,14 @@ const Navigator = ({ dialsBAGUETTE,
     straps,
     activator,
     handleNavigator,
-    click
+    click,
+    dialsBLACK
  }) => {
     return (
         <div className="navigatorContainers">
             <div className="navigator1 landscape:lsc-mob:pb-20  xl:my-5  mx-auto overflow-hidden">
                 <div
-                    className="dialsNavigators  items-center justify-center gap-x-10 w-full overflow-hidden hidden"
+                    className="dialsNavigators  items-center justify-center gap-x-10 w-full overflow-hidden hidden flex-wrap gap-y-4"
                     style={{ display: "none" }}
                 >
                     {/* ------------------------------------------- dial naivagor start ---------------------------------------- */}
@@ -62,6 +63,20 @@ const Navigator = ({ dialsBAGUETTE,
                                 onClick={() =>
                                     dialsActivator(
                                         dialsBAGUETTE.length + dialsBRUSHED.length + index
+                                    )
+                                }
+                            />
+                        ))}
+                    </div>
+                    <div className="flex gap-x-2">
+                        {dialsBLACK.map((dial, index) => (
+                            <img
+                                key={index}
+                                className="lg:w-8 lg:h-8  mid-xl:w-10  mid-xl:h-10 w-12 h-12  object-cover object-center"
+                                src={dial[0]}
+                                onClick={() =>
+                                    dialsActivator(
+                                        dialsBAGUETTE.length + dialsBRUSHED.length + dialsROMAN.length + index
                                     )
                                 }
                             />

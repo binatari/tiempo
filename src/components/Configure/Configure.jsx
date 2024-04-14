@@ -40,7 +40,8 @@ const Configure = () => {
     selectedExtraStrapsIndex,
     extraStrapsSelector,
     setClick,
-    click
+    click,
+    dialsBLACK
   } = useSliderContext();
 
   const { selected } = useParams();
@@ -359,6 +360,7 @@ const Configure = () => {
           activator={activator}
           click={click}
           handleNavigator={handleNavigator}
+          dialsBLACK={dialsBLACK}
         />
 
         {/*--------------------------------------------navigator parts end   --------------------------------------------- */}
