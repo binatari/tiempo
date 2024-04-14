@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-const ExtraStraps = ({ initialWatch, activeWatch, isDark, extraStraps }) => {
+const ExtraStraps = ({ initialWatch, activeWatch, isDark, extraStraps, setInvoiceMod }) => {
     return (
         <div className="sliderContainer sm:-mt-10 md:mt-0 sliderContainer2">
             <div className="slider1 slider flex flex-col md:flex-row justify-center items-center ">
@@ -37,6 +37,9 @@ const ExtraStraps = ({ initialWatch, activeWatch, isDark, extraStraps }) => {
                 >
                     <h3 className="text-xs">Rubber Straps</h3>
                     <h3 className="w-3/4 ">Choose additional straps (+£500)</h3>
+                    <button onClick={() => setInvoiceMod(true)} className="bg-white text-black rounded-xl uppercase my-2 font-medium mt-10 px-10 py-2">
+                                        confirm order
+                    </button>
                 </div>
             </div>
         </div>

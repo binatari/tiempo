@@ -230,7 +230,7 @@ const Configure = () => {
   console.log(initialWatch[activeWatch])
   return (
     <>
-      {invoiceMod ? <InvoiceModal extraStrapSelected={extraStrapSelected} currentWatch={initialWatch[activeWatch]} setInvoiceMod={setInvoiceMod} /> : <></>}
+      {invoiceMod ? <InvoiceModal click={click} extraStrapSelected={extraStrapSelected} currentWatch={initialWatch[activeWatch]} setInvoiceMod={setInvoiceMod} /> : <></>}
 
       <div
         className={`${isDark ? "bg-black" : "bg-white"
@@ -341,6 +341,7 @@ const Configure = () => {
           activeWatch={activeWatch}
           isDark={isDark}
           extraStraps={extraStraps}
+          setInvoiceMod={setInvoiceMod}
         />
 
         {/*--------------------------------------------navigator parts start   --------------------------------------------- */}
